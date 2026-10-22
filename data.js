@@ -70,7 +70,7 @@ const SITE = {
     {
       name: "Enterprise Risk Register and ISO 27001 ISMS Documentation Set",
       subtitle: "Fictional global food manufacturer (6,200 employees, 14 plants, 9 countries)",
-      link: "https://github.com/shassanahmed93-rgb",
+      link: "https://github.com/shassanahmed93-rgb/grc-portfolio-to-show",
       tags: ["ISO 31000", "ISO/IEC 27001:2022", "Annex A", "SoA", "GDPR", "KRIs"],
       points: [
         "Built an ISO 31000-aligned enterprise risk register of 75 risks across 13 categories (56 cyber), with 5x5 inherent and residual scoring, risk appetite checks, treatment plans, owners, and key risk indicators (KRIs).",
