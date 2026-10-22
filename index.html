@@ -1,84 +1,261 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Syed Hassan Ahmed | GRC Analyst</title>
-  <meta name="description" content="Syed Hassan Ahmed — GRC Analyst focused on IT risk, compliance, information security and AWS cloud security.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Syed Hassan Ahmed | GRC Analyst</title>
+<meta name="description" content="Syed Hassan Ahmed — GRC Analyst focused on IT risk, compliance, information security and AWS cloud security.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a101c; --panel:#111a2b; --panel-2:#16223a; --line:#233350;
+  --text:#dde7f5; --muted:#8c9dba; --cyan:#3fd8ec; --amber:#ffb454; --red:#ff6b6b; --green:#5be3a1;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;background-attachment:fixed;background-blend-mode:soft-light}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(1000px 520px at 78% -5%,rgba(63,216,236,.13),transparent 60%),var(--bg);opacity:.93;z-index:-1}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,16,28,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:28px;height:56px;overflow-x:auto;white-space:nowrap}
+.brand{font-family:var(--mono);font-weight:500;color:var(--text);display:flex;align-items:center;gap:8px}
+.brand i{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+nav a.l{color:var(--muted);font-size:.9rem}
+nav a.l:hover{color:var(--text);text-decoration:none}
+nav a.cta{margin-left:auto;border:1px solid var(--cyan);padding:5px 14px;border-radius:6px;font-size:.88rem}
+nav a.cta:hover{background:rgba(63,216,236,.1);text-decoration:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:88px 0 72px}
+.hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);line-height:1.04;margin:0 0 20px;font-weight:700;letter-spacing:-.025em}
+.hero h1 span{display:block;color:var(--cyan)}
+.hero p{color:var(--muted);max-width:52ch;font-size:1.08rem;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;border-radius:7px;font-weight:600;font-size:.95rem;border:1px solid var(--line);color:var(--text)}
+.btn.p{background:var(--cyan);color:#06222a;border-color:var(--cyan)}
+.btn:hover{text-decoration:none;filter:brightness(1.1)}
+
+/* risk heat map: the signature element */
+.matrix{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+.matrix header{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-bottom:14px}
+.matrix header b{color:var(--green);font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.c{aspect-ratio:1;border-radius:4px;position:relative;opacity:0;animation:in .5s forwards}
+.c.g{background:rgba(91,227,161,.2)} .c.y{background:rgba(255,180,84,.24)} .c.r{background:rgba(255,107,107,.3)}
+.c.dot::after{content:"";position:absolute;inset:32%;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.c.dot.mit::after{background:var(--bg);border:2px solid var(--cyan);box-shadow:none}
+.axis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:10px}
+.legend{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap}
+.legend span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;background:var(--cyan)}
+.legend span.m::before{background:none;border:2px solid var(--cyan)}
+@keyframes in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+
+/* sections */
+section{padding:64px 0;border-top:1px solid var(--line)}
+.h{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.h h2{margin:0;font-size:1.8rem;letter-spacing:-.015em}
+.h p{margin:0;color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px}
+
+/* experience timeline */
+.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:28px;display:grid;gap:30px}
+.tl article{position:relative}
+.tl article::before{content:"";position:absolute;left:-36px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan)}
+.tl h3{margin:0;font-size:1.1rem}
+.tl .meta{font-family:var(--mono);font-size:.8rem;color:var(--amber);margin:2px 0 8px}
+.tl ul{margin:0;padding-left:18px;color:var(--muted)}
+
+/* projects */
+.proj{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.proj .card h3{margin:10px 0 8px;font-size:1.05rem}
+.proj .card p{margin:0;color:var(--muted);font-size:.94rem}
+.tag{font-family:var(--mono);font-size:.74rem;padding:2px 8px;border-radius:4px;background:rgba(63,216,236,.1);color:var(--cyan)}
+.tag.a{background:rgba(255,180,84,.12);color:var(--amber)}
+.tag.gr{background:rgba(91,227,161,.12);color:var(--green)}
+
+/* certs */
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.cert{display:flex;gap:14px;align-items:center}
+.cert svg{flex:none;width:34px;height:34px;color:var(--green)}
+.cert b{display:block;font-size:.97rem}
+.cert small{color:var(--muted)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.skills h3{margin:0 0 12px;font-size:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1px solid var(--line);background:var(--panel-2);padding:4px 12px;border-radius:999px;font-size:.88rem}
+
+/* education + cv */
+.edu h3{margin:0}
+.edu p{margin:4px 0 0;color:var(--muted)}
+.cv{text-align:center;padding:42px 22px}
+.cv h3{margin:0 0 6px;font-size:1.3rem}
+.cv p{color:var(--muted);margin:0 0 22px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.88rem;font-family:var(--mono)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:56px;gap:40px}
+  .proj,.skills{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .c{animation:none;opacity:1}
+}
+</style>
 </head>
 <body>
-  <nav class="nav" aria-label="Sections">
-    <button class="nav__toggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
-    <div class="nav__links">
-      <a href="#intro">Intro</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#cv">CV</a>
+
+<nav aria-label="Primary">
+  <div class="wrap">
+    <a class="brand" href="#intro"><i></i>s.hassan</a>
+    <a class="l" href="#experience">Experience</a>
+    <a class="l" href="#projects">Projects</a>
+    <a class="l" href="#certifications">Certifications</a>
+    <a class="l" href="#skills">Skills</a>
+    <a class="l" href="#education">Education</a>
+    <a class="cta" href="#cv">Resume</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- INTRO -->
+<div class="hero" id="intro">
+  <div>
+    <h1>Syed Hassan Ahmed<span>GRC Analyst</span></h1>
+    <p>I turn IT risk, compliance and information security requirements into controls that teams can actually follow, with a focus on AWS cloud security.</p>
+    <div class="btns">
+      <a class="btn p" href="#projects">See my work</a>
+      <a class="btn" href="#cv">Download resume</a>
     </div>
-  </nav>
+  </div>
 
-  <header class="hero">
-    <div class="avatar" id="avatar"></div>
-    <h1 id="name"></h1>
-    <p class="hero__tagline" id="tagline"></p>
-    <div class="social" id="social"></div>
-    <a class="scroll-hint" href="#intro" aria-label="Scroll to intro"><i class="fa-solid fa-chevron-down"></i></a>
-  </header>
+  <div class="matrix" aria-label="Illustrative risk heat map showing risks moving to lower-rated cells after controls are applied">
+    <header><span>risk_register / heat map</span><b>● monitored</b></header>
+    <div class="grid" id="grid"></div>
+    <div class="axis"><span>Low likelihood</span><span>High likelihood</span></div>
+    <div class="legend"><span>Inherent risk</span><span class="m">Residual after controls</span></div>
+  </div>
+</div>
 
-  <main>
-    <section id="intro">
-      <header class="section__head"><h2>Intro</h2><p>Who am I?</p></header>
-      <div class="section__body" id="intro-content"></div>
-    </section>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="h"><h2>Experience</h2><p>Where I've worked</p></div>
+  <div class="tl">
+    <article>
+      <h3>GRC Analyst · Company name</h3>
+      <div class="meta">MM/YYYY – Present</div>
+      <ul>
+        <li>Replace with an achievement, for example: ran risk assessments across N systems.</li>
+        <li>Replace with an achievement, for example: mapped controls to ISO 27001 or NIST CSF.</li>
+      </ul>
+    </article>
+    <article>
+      <h3>Previous role · Company name</h3>
+      <div class="meta">MM/YYYY – MM/YYYY</div>
+      <ul>
+        <li>Replace with an achievement.</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
-    <section id="experience">
-      <header class="section__head"><h2>Experience</h2><p>Where I've worked</p></header>
-      <div class="section__body" id="experience-content"></div>
-    </section>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="h"><h2>Projects</h2><p>Hands-on GRC and cloud work</p></div>
+  <div class="proj">
+    <div class="card"><span class="tag">Risk</span><h3>Project title</h3><p>Describe the problem, what you built or assessed, and the result.</p></div>
+    <div class="card"><span class="tag a">Compliance</span><h3>Project title</h3><p>Describe the framework, scope and what you delivered.</p></div>
+    <div class="card"><span class="tag gr">AWS</span><h3>Project title</h3><p>Describe the cloud security work, such as IAM, logging or configuration review.</p></div>
+  </div>
+</section>
 
-    <section id="projects">
-      <header class="section__head"><h2>Projects</h2><p>Hands-on GRC &amp; cloud work</p></header>
-      <div class="section__body" id="projects-content"></div>
-    </section>
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="h"><h2>Certifications</h2><p>Credentials and training</p></div>
+  <div class="certs">
+    <div class="card cert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg>
+      <div><b>Certification name</b><small>Issuer · Year</small></div>
+    </div>
+    <div class="card cert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg>
+      <div><b>Certification name</b><small>Issuer · Year</small></div>
+    </div>
+    <div class="card cert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg>
+      <div><b>Certification name</b><small>Issuer · Year</small></div>
+    </div>
+  </div>
+</section>
 
-    <section id="certifications">
-      <header class="section__head"><h2>Certifications</h2><p>Credentials &amp; training</p></header>
-      <div class="section__body" id="certifications-content"></div>
-    </section>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="h"><h2>Skills</h2><p>Core competencies</p></div>
+  <div class="skills">
+    <div class="card"><h3>Governance and risk</h3><div class="chips"><span>Risk assessment</span><span>Policy development</span><span>Third-party risk</span><span>Audit support</span></div></div>
+    <div class="card"><h3>Frameworks</h3><div class="chips"><span>ISO 27001</span><span>NIST CSF</span><span>SOC 2</span><span>PCI DSS</span></div></div>
+    <div class="card"><h3>Cloud security</h3><div class="chips"><span>AWS IAM</span><span>CloudTrail</span><span>Security Hub</span><span>Config</span></div></div>
+    <div class="card"><h3>Tools</h3><div class="chips"><span>Excel</span><span>Jira</span><span>Splunk</span><span>Nessus</span></div></div>
+  </div>
+</section>
 
-    <section id="skills">
-      <header class="section__head"><h2>Skills</h2><p>Core competencies</p></header>
-      <div class="section__body" id="skills-content"></div>
-    </section>
+<!-- EDUCATION -->
+<section id="education">
+  <div class="h"><h2>Education</h2><p>Academic background</p></div>
+  <div class="card edu">
+    <h3>Degree title</h3>
+    <p>University name · Year – Year</p>
+  </div>
+</section>
 
-    <section id="education">
-      <header class="section__head"><h2>Education</h2><p>Academic background</p></header>
-      <div class="section__body" id="education-content"></div>
-    </section>
+<!-- CV -->
+<section id="cv">
+  <div class="card cv">
+    <h3>Curriculum vitae</h3>
+    <p>A one-page summary of my experience, certifications and skills.</p>
+    <a class="btn p" href="resume.pdf" download>Download resume (PDF)</a>
+  </div>
+</section>
 
-    <section id="cv">
-      <header class="section__head"><h2>Curriculum Vitae</h2><p>Let's take a look</p></header>
-      <div class="section__body">
-        <a class="btn" id="cv-link" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-file-arrow-down"></i> Download Resume (PDF)</a>
-      </div>
-    </section>
-  </main>
+</main>
 
-  <footer class="footer">
-    <p class="footer__name" id="footer-name"></p>
-    <div class="social" id="footer-social"></div>
-    <p class="muted">All Rights Reserved © <span id="year"></span></p>
-  </footer>
+<footer>
+  <div class="wrap">© <span id="yr"></span> Syed Hassan Ahmed. All rights reserved.</div>
+</footer>
 
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+<script>
+// Heat map: 5x5, likelihood across, impact up. Dots show a risk before and after controls.
+(function(){
+  var g=document.getElementById('grid');
+  var inherent=[[3,3],[4,4],[2,3]];   // [x,y] from bottom-left, 0-4
+  var residual=[[1,1],[2,1],[1,2]];
+  var html='';
+  for(var row=4;row>=0;row--){
+    for(var col=0;col<5;col++){
+      var s=col+row, cls=s>=6?'r':(s>=3?'y':'g'), dot='';
+      inherent.forEach(function(p){if(p[0]===col&&p[1]===row)dot=' dot'});
+      residual.forEach(function(p){if(p[0]===col&&p[1]===row)dot=' dot mit'});
+      var d=((4-row)*5+col)*28;
+      html+='<div class="c '+cls+dot+'" style="animation-delay:'+d+'ms"></div>';
+    }
+  }
+  g.innerHTML=html;
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
