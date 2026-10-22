@@ -1,265 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Syed Hassan Ahmed | GRC Analyst</title>
-<meta name="description" content="Syed Hassan Ahmed — GRC Analyst focused on IT risk, compliance, information security and AWS cloud security.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#0a101c; --panel:#111a2b; --panel-2:#16223a; --line:#233350;
-  --text:#dde7f5; --muted:#8c9dba; --cyan:#3fd8ec; --amber:#ffb454; --green:#5be3a1;
-  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;
-  background-image:linear-gradient(rgba(35,51,80,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(35,51,80,.35) 1px,transparent 1px);
-  background-size:56px 56px}
-body::before{content:"";position:fixed;inset:0;background:radial-gradient(1000px 520px at 78% -5%,rgba(63,216,236,.13),transparent 60%);z-index:-1;pointer-events:none}
-a{color:var(--cyan);text-decoration:none}
-a:hover{text-decoration:underline}
-:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-
-nav{position:sticky;top:0;z-index:20;background:rgba(10,16,28,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;gap:28px;height:56px;overflow-x:auto;white-space:nowrap}
-.brand{font-family:var(--mono);font-weight:500;color:var(--text);display:flex;align-items:center;gap:8px}
-.brand i{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
-nav a.l{color:var(--muted);font-size:.9rem}
-nav a.l:hover{color:var(--text);text-decoration:none}
-nav a.cta{margin-left:auto;border:1px solid var(--cyan);padding:5px 14px;border-radius:6px;font-size:.88rem}
-nav a.cta:hover{background:rgba(63,216,236,.1);text-decoration:none}
-
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:80px 0 64px}
-.avatar{width:132px;height:132px;border-radius:50%;border:3px solid var(--cyan);box-shadow:0 0 0 6px rgba(63,216,236,.12),0 0 28px rgba(63,216,236,.25);margin-bottom:22px;object-fit:cover;display:flex;align-items:center;justify-content:center;background:var(--panel-2);font:600 2.2rem var(--sans);color:var(--cyan)}
-.hero h1{font-size:clamp(2.3rem,5.2vw,3.7rem);line-height:1.05;margin:0 0 14px;font-weight:700;letter-spacing:-.025em}
-.hero h1 span{color:var(--cyan)}
-.tagline{color:var(--text);font-size:1.05rem;margin:0 0 14px}
-.sum{color:var(--muted);max-width:58ch;margin:0 0 20px}
-details.more{color:var(--muted);max-width:58ch;margin:-8px 0 20px}
-details.more summary{cursor:pointer;color:var(--cyan);font-size:.92rem}
-details.more p{margin:10px 0 0}
-.seek{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:24px;font-size:.88rem;color:var(--muted)}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:11px 20px;border-radius:7px;font-weight:600;font-size:.95rem;border:1px solid var(--line);color:var(--text)}
-.btn.p{background:var(--cyan);color:#06222a;border-color:var(--cyan)}
-.btn:hover{text-decoration:none;filter:brightness(1.1)}
-
-.matrix{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
-.matrix header{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-bottom:14px}
-.matrix header b{color:var(--green);font-weight:500}
-.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
-.c{aspect-ratio:1;border-radius:4px;position:relative;opacity:0;animation:in .5s forwards}
-.c.g{background:rgba(91,227,161,.2)} .c.y{background:rgba(255,180,84,.24)} .c.r{background:rgba(255,107,107,.3)}
-.c.dot::after{content:"";position:absolute;inset:32%;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
-.c.dot.mit::after{background:var(--bg);border:2px solid var(--cyan);box-shadow:none}
-.axis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:10px}
-.legend{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap}
-.legend span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;background:var(--cyan)}
-.legend span.m::before{background:none;border:2px solid var(--cyan)}
-@keyframes in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
-
-section{padding:64px 0;border-top:1px solid var(--line)}
-.h{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:32px}
-.h h2{margin:0;font-size:1.8rem;letter-spacing:-.015em}
-.h p{margin:0;color:var(--muted)}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px}
-ul.pts{margin:12px 0 0;padding-left:18px;color:var(--muted)}
-ul.pts li{margin-bottom:6px}
-
-.proj{display:grid;gap:20px}
-.proj h3{margin:0 0 4px;font-size:1.15rem}
-.proj .sub{color:var(--amber);font-size:.9rem;margin:0 0 12px}
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
-.tag{font-family:var(--mono);font-size:.74rem;padding:2px 8px;border-radius:4px;background:rgba(63,216,236,.1);color:var(--cyan)}
-.proj .lnk{display:inline-block;margin-top:10px;font-size:.92rem}
-
-.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
-.cert{display:flex;gap:14px;align-items:flex-start;padding:16px 18px}
-.cert svg{flex:none;width:30px;height:30px;color:var(--muted);margin-top:2px}
-.cert.f{border-color:rgba(91,227,161,.5)}
-.cert.f svg{color:var(--green)}
-.cert b{display:block;font-size:.95rem;line-height:1.4}
-.cert small{color:var(--muted);display:block}
-.cert code{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
-
-.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.skills h3{margin:0 0 12px;font-size:1rem}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{border:1px solid var(--line);background:var(--panel-2);padding:3px 11px;border-radius:999px;font-size:.84rem}
-
-.tl{display:grid;gap:34px}
-.co h3{margin:0;font-size:1.2rem}
-.co .meta{font-family:var(--mono);font-size:.8rem;color:var(--amber);margin:2px 0 14px}
-.roles{border-left:2px solid var(--line);margin-left:6px;padding-left:26px;display:grid;gap:22px}
-.role{position:relative}
-.role::before{content:"";position:absolute;left:-34px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan)}
-.role h4{margin:0;font-size:1.02rem}
-.role .meta{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin:0}
-
-.edu{display:grid;gap:14px}
-.edu h3{margin:0;font-size:1.05rem}
-.edu p{margin:4px 0 0;color:var(--muted)}
-
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
-.contact ul{list-style:none;margin:0;padding:0;color:var(--muted)}
-.contact li{margin-bottom:6px}
-.contact li b{color:var(--text);font-weight:500;display:inline-block;min-width:78px}
-footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.88rem;font-family:var(--mono)}
-
-@media (max-width:860px){
-  .hero{grid-template-columns:1fr;padding-top:48px;gap:40px}
-  .skills,.contact{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .c{animation:none;opacity:1}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Hassan Ahmed Warsi | Cybersecurity & GRC Professional</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Clean Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<nav aria-label="Primary">
-  <div class="wrap">
-    <a class="brand" href="#top"><i></i><span id="brand"></span></a>
-    <a class="l" href="#projects">Projects</a>
-    <a class="l" href="#certifications">Certifications</a>
-    <a class="l" href="#skills">Skills</a>
-    <a class="l" href="#experience">Experience</a>
-    <a class="l" href="#education">Education</a>
-    <a class="l" href="#cv">CV</a>
-    <a class="cta" id="navcv" href="#cv">Resume</a>
-  </div>
-</nav>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">SHAW<span>.sec</span></a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#grc-dashboard">GRC Dashboard</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact" class="nav-btn">Get in Touch</a>
+            </nav>
+        </div>
+    </header>
 
-<main class="wrap" id="top">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-content reveal">
+            <div class="hero-badge"><span>🟢</span> GRC & Cybersecurity Posture: Active</div>
+            <h1>Syed Hassan Ahmed Warsi</h1>
+            <p class="hero-subtitle">Cybersecurity, Governance, Risk & Compliance (GRC), and Cloud Security Professional</p>
+            <p class="hero-description">Specializing in ISO/IEC 27001, NIST CSF, SOC 2, PCI DSS frameworks, Active Directory security, and risk management.</p>
+            <div class="hero-buttons">
+                <a href="#grc-dashboard" class="btn btn-primary">Explore GRC Dashboard</a>
+                <a href="Syed_Hassan_Ahmed_Resume.pdf" target="_blank" class="btn btn-outline">Download Resume</a>
+            </div>
+        </div>
+    </section>
 
-<div class="hero">
-  <div>
-    <div id="avatarBox"></div>
-    <h1 id="name"></h1>
-    <p class="tagline" id="tagline"></p>
-    <p class="sum" id="sum1"></p>
-    <details class="more" id="more"><summary>Read full summary</summary></details>
-    <div class="seek" id="seek"></div>
-    <div class="btns">
-      <a class="btn p" href="#projects">See my work</a>
-      <a class="btn" id="heroResume" href="#cv">Download resume</a>
-    </div>
-  </div>
-  <div class="matrix" aria-label="Illustrative risk heat map showing risks moving to lower-rated cells after controls are applied">
-    <header><span>risk_register / heat map</span><b>● monitored</b></header>
-    <div class="grid" id="grid"></div>
-    <div class="axis"><span>Low likelihood</span><span>High likelihood</span></div>
-    <div class="legend"><span>Inherent risk</span><span class="m">Residual after controls</span></div>
-  </div>
-</div>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Professional Profile</h2>
+                <p>Bridging technical infrastructure security with rigorous compliance frameworks.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <h3>Governance & Compliance</h3>
+                    <p>Experienced in aligning organizational controls with global standards including ISO/IEC 27001, NIST CSF 2.0, SOC 2 Type II, and PCI DSS v4.0.</p>
+                </div>
+                <div class="about-card reveal">
+                    <h3>Cloud & Systems Security</h3>
+                    <p>Proficient in AWS cloud security principles, Windows Server 2022 Active Directory Domain Services configuration, and threat assessment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="projects"><div class="h"><h2>Projects</h2><p>Hands-on GRC &amp; cloud work</p></div><div class="proj" id="projectsBox"></div></section>
-<section id="certifications"><div class="h"><h2>Certifications</h2><p>Credentials &amp; training</p></div><div class="certs" id="certsBox"></div></section>
-<section id="skills"><div class="h"><h2>Skills</h2><p>Core competencies</p></div><div class="skills" id="skillsBox"></div></section>
-<section id="experience"><div class="h"><h2>Experience</h2><p>Where I've worked</p></div><div class="tl" id="expBox"></div></section>
-<section id="education"><div class="h"><h2>Education</h2><p>Academic background</p></div><div class="edu" id="eduBox"></div></section>
-<section id="cv">
-  <div class="h"><h2>Curriculum Vitae</h2><p>Let's take a look</p></div>
-  <div class="card contact">
-    <ul id="contactList"></ul>
-    <div><a class="btn p" id="cvLink" href="#" target="_blank" rel="noopener">Download Resume (PDF)</a></div>
-  </div>
-</section>
+    <!-- Interactive GRC & Risk Intelligence Dashboard -->
+    <section id="grc-dashboard" class="grc-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Governance, Risk & Compliance (GRC) Dashboard</h2>
+                <p>Interactive simulation of compliance frameworks, real-time risk scoring, and threat posture.</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Framework Compliance Status Widget -->
+                <div class="dashboard-card reveal">
+                    <h3>Framework Posture & Readiness</h3>
+                    <div class="framework-list">
+                        <div class="framework-item">
+                            <span class="fw-name">ISO/IEC 27001 (Information Security)</span>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 94%;"></div></div>
+                            <span class="fw-score">94%</span>
+                        </div>
+                        <div class="framework-item">
+                            <span class="fw-name">NIST Cybersecurity Framework (CSF 2.0)</span>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                            <span class="fw-score">90%</span>
+                        </div>
+                        <div class="framework-item">
+                            <span class="fw-name">SOC 2 Type II (Trust Services Criteria)</span>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 96%;"></div></div>
+                            <span class="fw-score">96%</span>
+                        </div>
+                        <div class="framework-item">
+                            <span class="fw-name">PCI DSS v4.0 (Payment Security)</span>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+                            <span class="fw-score">88%</span>
+                        </div>
+                    </div>
+                </div>
 
-</main>
+                <!-- Dynamic Risk Assessment Calculator Widget -->
+                <div class="dashboard-card reveal">
+                    <h3>Dynamic Risk Assessment Matrix</h3>
+                    <div class="risk-calculator">
+                        <div class="calc-group">
+                            <label for="likelihood-select">Threat Likelihood:</label>
+                            <select id="likelihood-select" class="dashboard-input">
+                                <option value="1">1 - Rare / Unlikely</option>
+                                <option value="2">2 - Possible</option>
+                                <option value="3" selected>3 - Likely</option>
+                                <option value="4">4 - Almost Certain</option>
+                            </select>
+                        </div>
+                        <div class="calc-group">
+                            <label for="impact-select">Business Impact:</label>
+                            <select id="impact-select" class="dashboard-input">
+                                <option value="1">1 - Negligible</option>
+                                <option value="2" selected>2 - Moderate</option>
+                                <option value="3">3 - Major</option>
+                                <option value="4">4 - Catastrophic</option>
+                            </select>
+                        </div>
+                        <div class="risk-output-box" id="risk-output">
+                            <span class="risk-label">Calculated Risk Score & Level:</span>
+                            <span class="risk-score-badge medium" id="risk-badge">Medium (6)</span>
+                            <p id="risk-recommendation">Recommendation: Schedule remediation in the upcoming sprint cycle and enforce secondary access controls.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer><div class="wrap">© <span id="yr"></span> <span id="fname"></span>. All rights reserved.</div></footer>
+    <!-- Resume Section -->
+    <section id="resume" class="section">
+        <div class="container text-center reveal">
+            <h2>Curriculum Vitae</h2>
+            <p>Review my complete background, certifications, and project history.</p>
+            <div style="margin-top: 25px;">
+                <a href="Syed_Hassan_Ahmed_Resume.pdf" target="_blank" class="btn btn-primary">View Full Resume (PDF)</a>
+            </div>
+        </div>
+    </section>
 
-<script src="data.js"></script>
-<script>
-(function(){
-  var S=window.SITE||(typeof SITE!=='undefined'?SITE:null); if(!S) return;
-  function $(id){return document.getElementById(id)}
-  function el(tag,cls,text,parent){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;if(parent)parent.appendChild(e);return e}
-  function link(parent,cls,text,href){var a=el('a',cls,text,parent);a.href=href;if(/^http/.test(href)){a.target='_blank';a.rel='noopener'}return a}
-  function list(parent,items){var ul=el('ul','pts',null,parent);(items||[]).forEach(function(t){el('li',null,t,ul)});return ul}
-  var full=S.firstName+' '+S.lastName;
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to discuss cybersecurity strategies, GRC frameworks, or collaboration opportunities?</p>
+            </div>
+            <div class="contact-box text-center">
+                <a href="mailto:shassanahmed93@gmail.com" class="btn btn-primary">Send Email</a>
+            </div>
+        </div>
+    </section>
 
-  $('brand').textContent=(S.firstName.split(' ')[0]+'.'+S.lastName).toLowerCase();
-  $('fname').textContent=full; $('yr').textContent=new Date().getFullYear();
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 Syed Hassan Ahmed Warsi. All rights reserved.</p>
+        </div>
+    </footer>
 
-  // hero
-  var ab=$('avatarBox'), ini=function(){ab.innerHTML='';el('div','avatar',S.initials||'',ab)};
-  var img=new Image(); img.className='avatar'; img.alt='Portrait of '+full; img.width=132; img.height=132;
-  img.onerror=ini; img.src=S.avatar||'profile.jpg'; ab.appendChild(img);
-  var h=$('name'); h.appendChild(document.createTextNode(S.firstName+' ')); el('span',null,S.lastName,h);
-  $('tagline').textContent=S.tagline;
-  var sm=S.summary||[]; $('sum1').textContent=sm[0]||'';
-  if(sm.length>1){sm.slice(1).forEach(function(t){el('p',null,t,$('more'))})}else{$('more').remove()}
-  var sk=$('seek'); if(S.seeking&&S.seeking.length){el('span',null,'Open to:',sk);S.seeking.forEach(function(t){el('span','tag',t,sk)})}
-  var pdf=S.resumePdf||'#'; ['heroResume','cvLink','navcv'].forEach(function(id){$(id).href=pdf});
-
-  // projects
-  (S.projects||[]).forEach(function(p){
-    var c=el('article','card',null,$('projectsBox'));
-    el('h3',null,p.name,c); if(p.subtitle)el('p','sub',p.subtitle,c);
-    var t=el('div','tags',null,c);(p.tags||[]).forEach(function(x){el('span','tag',x,t)});
-    list(c,p.points); if(p.link)link(c,'lnk','View project on GitHub',p.link);
-  });
-
-  // certifications
-  var shield='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg>';
-  (S.certifications||[]).forEach(function(c){
-    var d=el('div','card cert'+(c.featured?' f':''),null,$('certsBox')); d.innerHTML=shield;
-    var w=el('div',null,null,d); el('b',null,c.name,w);
-    if(c.issuer)el('small',null,c.issuer,w); if(c.id)el('code',null,'ID: '+c.id,w);
-  });
-
-  // skills
-  (S.skills||[]).forEach(function(g){
-    var c=el('div','card',null,$('skillsBox')); el('h3',null,g.group,c);
-    var ch=el('div','chips',null,c);(g.items||[]).forEach(function(i){el('span',null,i,ch)});
-  });
-
-  // experience
-  (S.experience||[]).forEach(function(e){
-    var c=el('article','co',null,$('expBox')); el('h3',null,e.company,c);
-    el('div','meta',[e.location,e.dates].filter(Boolean).join(' · '),c);
-    var r=el('div','roles',null,c);
-    (e.roles||[]).forEach(function(ro){
-      var d=el('div','role',null,r); el('h4',null,ro.title,d);
-      if(ro.dates)el('p','meta',ro.dates,d); list(d,ro.points);
-    });
-  });
-
-  // education
-  (S.education||[]).forEach(function(e){
-    var c=el('div','card',null,$('eduBox')); el('h3',null,e.degree,c);
-    el('p',null,[e.school,e.year].filter(Boolean).join(' · '),c);
-  });
-
-  // contact
-  var cl=$('contactList');
-  function row(label,val,href){var li=el('li',null,null,cl);el('b',null,label,li);if(href)link(li,null,val,href);else li.appendChild(document.createTextNode(val))}
-  if(S.email)row('Email',S.email,'mailto:'+S.email);
-  if(S.phone)row('Phone',S.phone);
-  if(S.location)row('Location',S.location);
-  if(S.linkedin)row('LinkedIn','Profile',S.linkedin);
-  if(S.github)row('GitHub','shassanahmed93-rgb',S.github);
-
-  // heat map
-  var inh=[[3,3],[4,4],[2,3]],res=[[1,1],[2,1],[1,2]],html='';
-  for(var row2=4;row2>=0;row2--)for(var col=0;col<5;col++){
-    var s=col+row2,cls=s>=6?'r':(s>=3?'y':'g'),dot='';
-    inh.forEach(function(p){if(p[0]===col&&p[1]===row2)dot=' dot'});
-    res.forEach(function(p){if(p[0]===col&&p[1]===row2)dot=' dot mit'});
-    html+='<div class="c '+cls+dot+'" style="animation-delay:'+(((4-row2)*5+col)*28)+'ms"></div>';
-  }
-  $('grid').innerHTML=html;
-})();
-</script>
+    <!-- JavaScript Link -->
+    <script src="main.js"></script>
 </body>
 </html>
