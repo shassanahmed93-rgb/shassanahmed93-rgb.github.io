@@ -3,7 +3,7 @@ const SITE = {
   firstName: "Syed Hassan",
   lastName: "Ahmed",
   initials: "SH",
-  avatar: "", // e.g. "avatar.jpg" — leave empty to show initials
+  avatar: "avatar.jpg", // e.g. "avatar.jpg" — leave empty to show initials
   tagline: "GRC Analyst | IT Risk & Compliance | Information Security | Cloud Security (AWS)",
   location: "Karachi, Pakistan",
   email: "s.hassanahmed93@gmail.com",
