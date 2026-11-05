@@ -121,13 +121,26 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
   html{scroll-behavior:auto}
   .c{animation:none;opacity:1}
 }
+
+/* Portfolio refinement */
+.skip{position:absolute;left:16px;top:-80px;background:var(--cyan);color:var(--bg);padding:12px;z-index:99}.skip:focus{top:8px}
+.nav-links{display:flex;align-items:center;gap:24px}.menu-toggle{display:none;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:7px;padding:10px 14px;font:inherit}nav .wrap{overflow:visible}
+.proj{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.project-card{overflow:hidden;padding:0;transition:transform .25s,border-color .25s}.project-card:hover{transform:translateY(-4px);border-color:var(--cyan)}.project-body{padding:24px}.project-preview{height:200px;background:linear-gradient(140deg,#172b43,#0b1423);border-bottom:1px solid var(--line);overflow:hidden}.project-preview img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}.project-art{height:100%;display:flex;flex-direction:column;justify-content:center;padding:28px;font:500 .82rem var(--mono);color:var(--muted)}.project-art strong{font:600 2rem var(--sans);color:var(--text);margin:8px 0}.project-art .route{color:var(--cyan);font-size:.75rem}.project-kicker{font:.72rem var(--mono);color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin:0 0 10px}.project-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.project-actions a{font-size:.82rem;padding:9px 12px}.project-description{color:var(--muted);font-size:.94rem}.project-details summary,.training summary{cursor:pointer;color:var(--cyan);padding:12px 0}.project-details{font-size:.9rem}.training{margin-top:20px}.training .certs{margin-top:16px}.proof-link{display:inline-block;margin-top:16px;font-size:.85rem}.hero-note{font:.78rem var(--mono);color:var(--green);letter-spacing:.06em;margin-bottom:18px}
+.matrix .c{display:flex;align-items:center;justify-content:center;font:.74rem var(--mono)}.matrix-note{color:var(--muted);font-size:.8rem;margin:12px 0 0}
+.reveal{transition:opacity .6s,transform .6s}.motion-ready .reveal:not(.shown){opacity:0;transform:translateY(18px)}
+@media(max-width:860px){nav .wrap{position:relative;gap:12px}.menu-toggle{display:block;margin-left:auto}.nav-links{display:none;position:absolute;left:0;right:0;top:56px;background:var(--panel);padding:20px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 0}nav a.cta{margin-left:0}.proj{grid-template-columns:1fr}.hero{padding-top:36px}.project-preview{height:190px}}
+@media(max-width:380px){.wrap{padding-left:16px;padding-right:16px}.certs{grid-template-columns:1fr}.hero h1{font-size:2.1rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.motion-ready .reveal:not(.shown){opacity:1;transform:none}.c{opacity:1}}
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Skip to main content</a>
 
 <nav aria-label="Primary">
   <div class="wrap">
     <a class="brand" href="#top"><i></i><span id="brand"></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <div class="nav-links" id="navLinks">
     <a class="l" href="#projects">Projects</a>
     <a class="l" href="#certifications">Certifications</a>
     <a class="l" href="#skills">Skills</a>
@@ -135,6 +148,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
     <a class="l" href="#education">Education</a>
     <a class="l" href="#cv">CV</a>
     <a class="cta" id="navcv" href="#cv">Resume</a>
+    </div>
   </div>
 </nav>
 
@@ -142,7 +156,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 
 <div class="hero">
   <div>
-    <div id="avatarBox"></div>
+    <p class="hero-note">GOVERNANCE · RISK · CLOUD SECURITY</p><div id="avatarBox"></div>
     <h1 id="name"></h1>
     <p class="tagline" id="tagline"></p>
     <p class="sum" id="sum1"></p>
@@ -154,9 +168,9 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
     </div>
   </div>
   <div class="matrix" aria-label="Illustrative risk heat map showing risks moving to lower-rated cells after controls are applied">
-    <header><span>risk_register / heat map</span><b>● monitored</b></header>
+    <header><span>risk_register / heat map</span><b>Illustrative data</b></header>
     <div class="grid" id="grid"></div>
-    <div class="axis"><span>Low likelihood</span><span>High likelihood</span></div>
+    <div class="axis"><span>Impact: 1 → 5</span><span>Likelihood: 1 ↑ 5</span></div><p class="matrix-note">Cell score = likelihood × impact. Synthetic examples, not live monitoring.</p>
     <div class="legend"><span>Inherent risk</span><span class="m">Residual after controls</span></div>
   </div>
 </div>
@@ -178,7 +192,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 
 <footer><div class="wrap">© <span id="yr"></span> <span id="fname"></span>. All rights reserved.</div></footer>
 
-<script src="data.js?v=b190a67"></script>
+<script src="data.js?v=portfolio-20261105"></script>
 <script>
 (function(){
   var S=window.SITE||(typeof SITE!=='undefined'?SITE:null); if(!S) return;
@@ -202,26 +216,39 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
   var sk=$('seek'); if(S.seeking&&S.seeking.length){el('span',null,'Open to:',sk);S.seeking.forEach(function(t){el('span','tag',t,sk)})}
   var pdf=S.resumePdf||'#'; ['heroResume','cvLink','navcv'].forEach(function(id){$(id).href=pdf});
 
-  // projects
-  (S.projects||[]).forEach(function(p){
-    var c=el('article','card',null,$('projectsBox'));
-    el('h3',null,p.name,c); if(p.subtitle)el('p','sub',p.subtitle,c);
-    var t=el('div','tags',null,c);(p.tags||[]).forEach(function(x){el('span','tag',x,t)});
-    list(c,p.points); if(p.link)link(c,'lnk','View project on GitHub',p.link);
-  });
 
+  var presentations=[
+    {id:'assurance',kind:'Interactive case study',summary:'Follow eight cloud risks from control testing to executive decisions and remediation.',metric:'8 risks → 5 findings',route:'Risk → Control → Test → Decision',demo:'projects/cloud-assurance/',study:'https://github.com/shassanahmed93-rgb/grc-cloud-assurance-project/blob/main/docs/case-study.md'},
+    {id:'oscal',kind:'Python application · Synthetic findings',summary:'Explore cloud finding prioritization, control references and an example OSCAL security plan.',image:'https://raw.githubusercontent.com/shassanahmed93-rgb/cloud-grc-oscal-platform/main/screenshots/dashboard.png',study:'https://github.com/shassanahmed93-rgb/cloud-grc-oscal-platform#readme'},
+    {id:'isms',kind:'Documentation case study',summary:'An enterprise risk register and connected ISMS documentation for a fictional manufacturer.',metric:'75 enterprise risks',route:'Scope → Risk register → Controls → Policies',study:'https://github.com/shassanahmed93-rgb/grc-portfolio-to-show/blob/main/risk-assessment-summary.md'},
+    {id:'journal',kind:'AWS deployment · Resources retired',summary:'Infrastructure automation, identity federation and observability for a cloud API.',metric:'Terraform → AWS',route:'GitHub Actions → ECR → EKS → RDS',study:'https://github.com/shassanahmed93-rgb/journal-starter#readme'}
+  ];
+  (S.projects||[]).forEach(function(p,index){
+    var m=presentations[index]||{},c=el('article','card project-card reveal',null,$('projectsBox'));c.id='project-'+m.id;
+    var preview=el('div','project-preview',null,c);
+    if(m.image){var picture=el('img',null,null,preview);picture.src=m.image;picture.alt='Cloud GRC OSCAL dashboard with synthetic security findings';picture.loading='lazy';picture.width=1000;picture.height=480}
+    else{var art=el('div','project-art',null,preview);el('span',null,m.kind,art);el('strong',null,m.metric,art);el('span','route',m.route,art)}
+    var body=el('div','project-body',null,c);el('p','project-kicker',m.kind,body);el('h3',null,p.name,body);
+    el('p','project-description',m.summary,body);var t=el('div','tags',null,body);(p.tags||[]).forEach(function(x){el('span','tag',x,t)});
+    var detail=el('details','project-details',null,body);el('summary',null,'Implementation & evidence',detail);if(p.subtitle)el('p','sub',p.subtitle,detail);list(detail,p.points);
+    var actions=el('div','project-actions',null,body);if(m.demo)link(actions,'btn p','View demo ↗',m.demo);if(m.study)link(actions,'btn','Read case study ↗',m.study);if(p.link)link(actions,'btn','GitHub ↗',p.link);
+  });
   // certifications
   var shield='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg>';
+  var extra=el('details','training',null,$('certsBox').parentElement);
+  el('summary',null,'View additional credentials & training ('+(S.certifications||[]).filter(function(c){return !c.featured}).length+')',extra);
+  var extraGrid=el('div','certs',null,extra);
   (S.certifications||[]).forEach(function(c){
-    var d=el('div','card cert'+(c.featured?' f':''),null,$('certsBox')); d.innerHTML=shield;
+    var d=el('div','card cert'+(c.featured?' f':''),null,c.featured?$('certsBox'):extraGrid); d.innerHTML=shield;
     var w=el('div',null,null,d); el('b',null,c.name,w);
     if(c.issuer)el('small',null,c.issuer,w); if(c.id)el('code',null,'ID: '+c.id,w);
   });
 
   // skills
-  (S.skills||[]).forEach(function(g){
+  (S.skills||[]).forEach(function(g,index){
     var c=el('div','card',null,$('skillsBox')); el('h3',null,g.group,c);
     var ch=el('div','chips',null,c);(g.items||[]).forEach(function(i){el('span',null,i,ch)});
+    var proof=[['#project-assurance','See risk assessment & testing'],['#project-isms','See ISMS documentation'],['#project-oscal','See control references & SSP'],['#project-journal','See cloud implementation'],['#project-oscal','See findings triage example'],['#project-assurance','See executive briefing']][index];if(proof)link(c,'proof-link',proof[1]+' →',proof[0]);
   });
 
   // experience
@@ -253,12 +280,22 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
   // heat map
   var inh=[[3,3],[4,4],[2,3]],res=[[1,1],[2,1],[1,2]],html='';
   for(var row2=4;row2>=0;row2--)for(var col=0;col<5;col++){
-    var s=col+row2,cls=s>=6?'r':(s>=3?'y':'g'),dot='';
+    var s=(col+1)*(row2+1),cls=s>=15?'r':(s>=5?'y':'g'),dot='';
     inh.forEach(function(p){if(p[0]===col&&p[1]===row2)dot=' dot'});
     res.forEach(function(p){if(p[0]===col&&p[1]===row2)dot=' dot mit'});
-    html+='<div class="c '+cls+dot+'" style="animation-delay:'+(((4-row2)*5+col)*28)+'ms"></div>';
+    html+='<div class="c '+cls+dot+'" title="Likelihood '+(row2+1)+', impact '+(col+1)+', score '+s+'" style="animation-delay:'+(((4-row2)*5+col)*28)+'ms">'+s+'</div>';
   }
   $('grid').innerHTML=html;
+
+  var menu=$('menuToggle'),nav=$('navLinks');
+  function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}
+  menu.addEventListener('click',function(){var open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open)});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){closeMenu();menu.focus()}});
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('shown');observer.unobserve(e.target)}})},{threshold:.06});
+    document.querySelectorAll('.reveal').forEach(function(e){observer.observe(e)});document.body.classList.add('motion-ready');
+  }
 })();
 </script>
 </body>
