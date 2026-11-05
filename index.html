@@ -131,7 +131,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 @media(max-width:860px){nav .wrap{position:relative;gap:12px}.menu-toggle{display:block;margin-left:auto}.nav-links{display:none;position:absolute;left:0;right:0;top:56px;background:var(--panel);padding:20px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 0}nav a.cta{margin-left:0}.proj{grid-template-columns:1fr}.hero{padding-top:36px}.project-preview{height:190px}}
 @media(max-width:380px){.wrap{padding-left:16px;padding-right:16px}.certs{grid-template-columns:1fr}.hero h1{font-size:2.1rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.motion-ready .reveal:not(.shown){opacity:1;transform:none}.c{opacity:1}}
-</style>
+.project-filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:16px}.filter-button{font:inherit;font-size:.83rem;min-height:42px;padding:9px 14px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:6px;cursor:pointer}.filter-button[aria-pressed=true]{background:rgba(63,216,236,.12);color:var(--cyan);border-color:var(--cyan)}.project-count{font:.75rem var(--mono);color:var(--muted);margin:0 0 20px}.project-card[hidden]{display:none!important}</style>
 </head>
 <body>
 <a class="skip" href="#top">Skip to main content</a>
@@ -175,7 +175,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
   </div>
 </div>
 
-<section id="projects"><div class="h"><h2>Projects</h2><p>Hands-on GRC &amp; cloud work</p></div><div class="proj" id="projectsBox"></div></section>
+<section id="projects"><div class="h"><h2>Projects</h2><p>Hands-on GRC &amp; cloud work</p></div><div class="project-filters" role="group" aria-label="Filter projects"><button class="filter-button" data-filter="all" aria-pressed="true">All projects</button><button class="filter-button" data-filter="assurance" aria-pressed="false">Assurance &amp; audit</button><button class="filter-button" data-filter="cloud" aria-pressed="false">Cloud engineering</button><button class="filter-button" data-filter="governance" aria-pressed="false">Governance</button></div><p id="projectCount" class="project-count" aria-live="polite"></p><div class="proj" id="projectsBox"></div></section>
 <section id="certifications"><div class="h"><h2>Certifications</h2><p>Credentials &amp; training</p></div><div class="certs" id="certsBox"></div></section>
 <section id="skills"><div class="h"><h2>Skills</h2><p>Core competencies</p></div><div class="skills" id="skillsBox"></div></section>
 <section id="experience"><div class="h"><h2>Experience</h2><p>Where I've worked</p></div><div class="tl" id="expBox"></div></section>
@@ -192,7 +192,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 
 <footer><div class="wrap">© <span id="yr"></span> <span id="fname"></span>. All rights reserved.</div></footer>
 
-<script src="data.js?v=portfolio-20261105"></script>
+<script src="data.js?v=assurance-suite-1"></script>
 <script>
 (function(){
   var S=window.SITE||(typeof SITE!=='undefined'?SITE:null); if(!S) return;
@@ -224,15 +224,18 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
     {id:'journal',kind:'AWS deployment · Resources retired',summary:'Infrastructure automation, identity federation and observability for a cloud API.',metric:'Terraform → AWS',route:'GitHub Actions → ECR → EKS → RDS',study:'https://github.com/shassanahmed93-rgb/journal-starter#readme'}
   ];
   (S.projects||[]).forEach(function(p,index){
-    var m=presentations[index]||{},c=el('article','card project-card reveal',null,$('projectsBox'));c.id='project-'+m.id;
+    var m=p.presentation||presentations[index]||{},c=el('article','card project-card reveal',null,$('projectsBox'));c.id='project-'+m.id;
+    c.dataset.category=p.category||'governance';
     var preview=el('div','project-preview',null,c);
-    if(m.image){var picture=el('img',null,null,preview);picture.src=m.image;picture.alt='Cloud GRC OSCAL dashboard with synthetic security findings';picture.loading='lazy';picture.width=1000;picture.height=480}
+    if(m.image){var picture=el('img',null,null,preview);picture.src=m.image;picture.alt=p.name+' — project preview';picture.loading='lazy';picture.width=1000;picture.height=480}
     else{var art=el('div','project-art',null,preview);el('span',null,m.kind,art);el('strong',null,m.metric,art);el('span','route',m.route,art)}
     var body=el('div','project-body',null,c);el('p','project-kicker',m.kind,body);el('h3',null,p.name,body);
     el('p','project-description',m.summary,body);var t=el('div','tags',null,body);(p.tags||[]).forEach(function(x){el('span','tag',x,t)});
     var detail=el('details','project-details',null,body);el('summary',null,'Implementation & evidence',detail);if(p.subtitle)el('p','sub',p.subtitle,detail);list(detail,p.points);
     var actions=el('div','project-actions',null,body);if(m.demo)link(actions,'btn p','View demo ↗',m.demo);if(m.study)link(actions,'btn','Read case study ↗',m.study);if(p.link)link(actions,'btn','GitHub ↗',p.link);
   });
+  var filterButtons=document.querySelectorAll('[data-filter]');$('projectCount').textContent=S.projects.length+' projects';
+  filterButtons.forEach(function(button){button.addEventListener('click',function(){var value=button.dataset.filter,count=0;filterButtons.forEach(function(b){b.setAttribute('aria-pressed',String(b===button))});document.querySelectorAll('.project-card').forEach(function(card){var show=value==='all'||card.dataset.category===value;card.hidden=!show;if(show){count++;card.classList.add('shown')}});$('projectCount').textContent=count+' projects shown';})});
   // certifications
   var shield='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg>';
   var extra=el('details','training',null,$('certsBox').parentElement);
