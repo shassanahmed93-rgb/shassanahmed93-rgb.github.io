@@ -24,6 +24,29 @@ const SITE = {
   ],
   "experience": [
     {
+      "company": "Multi Chaos Media",
+      "location": "Michigan, USA · Remote",
+      "dates": "March 2026 – Present",
+      "description": "Cloud-based digital media company delivering animation production, website development, and PPC advertising services.",
+      "roles": [
+        {
+          "title": "GRC Analyst (Remote)",
+          "dates": "",
+          "points": [
+            "Lead governance, risk, and compliance activities for a cloud-hosted creative and digital marketing environment, focusing on client information, campaign data, and production workflows.",
+            "Assess risks across cloud infrastructure, web applications, and project delivery; maintain a risk register with likelihood and impact scoring, treatment plans, and accountable owners.",
+            "Review customer-database access and data handling practices, supporting least privilege, data classification, encryption requirements, and retention standards.",
+            "Perform gap assessments against ISO/IEC 27001:2022, NIST CSF 2.0, and SOC 2; map overlapping controls to support consistent implementation and client security questionnaires.",
+            "Develop and maintain policies and procedures covering access control, incident response, acceptable use, and data protection.",
+            "Assess vendors, SaaS tools, advertising platforms, and freelancers that handle client or project data; document findings and track remediation.",
+            "Support privacy compliance activities relating to GDPR, CCPA, and applicable US state privacy requirements, including data mapping and processing records.",
+            "Coordinate evidence collection, internal reviews, and corrective-action tracking; communicate risk and compliance priorities to leadership.",
+            "Deliver role-relevant security awareness guidance and work with creative, development, and marketing teams to prioritize cloud security findings and remediation."
+          ]
+        }
+      ]
+    },
+    {
       "company": "BOL Network",
       "location": "Karachi, Pakistan",
       "dates": "Sep 2016 – Present",

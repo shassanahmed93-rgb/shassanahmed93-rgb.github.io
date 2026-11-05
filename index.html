@@ -131,7 +131,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 @media(max-width:860px){nav .wrap{position:relative;gap:12px}.menu-toggle{display:block;margin-left:auto}.nav-links{display:none;position:absolute;left:0;right:0;top:56px;background:var(--panel);padding:20px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 0}nav a.cta{margin-left:0}.proj{grid-template-columns:1fr}.hero{padding-top:36px}.project-preview{height:190px}}
 @media(max-width:380px){.wrap{padding-left:16px;padding-right:16px}.certs{grid-template-columns:1fr}.hero h1{font-size:2.1rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.motion-ready .reveal:not(.shown){opacity:1;transform:none}.c{opacity:1}}
-.project-filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:16px}.filter-button{font:inherit;font-size:.83rem;min-height:42px;padding:9px 14px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:6px;cursor:pointer}.filter-button[aria-pressed=true]{background:rgba(63,216,236,.12);color:var(--cyan);border-color:var(--cyan)}.project-count{font:.75rem var(--mono);color:var(--muted);margin:0 0 20px}.project-card[hidden]{display:none!important}</style>
+.project-filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:16px}.filter-button{font:inherit;font-size:.83rem;min-height:42px;padding:9px 14px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:6px;cursor:pointer}.filter-button[aria-pressed=true]{background:rgba(63,216,236,.12);color:var(--cyan);border-color:var(--cyan)}.project-count{font:.75rem var(--mono);color:var(--muted);margin:0 0 20px}.project-card[hidden]{display:none!important}.company-description{color:var(--muted);font-size:.92rem;max-width:80ch;margin:0 0 20px}</style>
 </head>
 <body>
 <a class="skip" href="#top">Skip to main content</a>
@@ -192,7 +192,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 
 <footer><div class="wrap">© <span id="yr"></span> <span id="fname"></span>. All rights reserved.</div></footer>
 
-<script src="data.js?v=assurance-suite-1"></script>
+<script src="data.js?v=experience-20261105"></script>
 <script>
 (function(){
   var S=window.SITE||(typeof SITE!=='undefined'?SITE:null); if(!S) return;
@@ -258,6 +258,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
   (S.experience||[]).forEach(function(e){
     var c=el('article','co',null,$('expBox')); el('h3',null,e.company,c);
     el('div','meta',[e.location,e.dates].filter(Boolean).join(' · '),c);
+    if(e.description)el('p','company-description',e.description,c);
     var r=el('div','roles',null,c);
     (e.roles||[]).forEach(function(ro){
       var d=el('div','role',null,r); el('h4',null,ro.title,d);
