@@ -68,6 +68,40 @@ const SITE = {
 
   projects: [
     {
+      "name": "Cloud Assurance Lab",
+      "subtitle": "Synthetic cloud SaaS assurance case study with an interactive executive briefing",
+      "link": "https://github.com/shassanahmed93-rgb/grc-cloud-assurance-project",
+      "tags": [
+        "Risk Assessment",
+        "Control Testing",
+        "Evidence Traceability",
+        "JavaScript",
+        "CSV"
+      ],
+      "points": [
+        "Connected eight risks to eight controls and test results, with five remediation findings assigned to owners and deadlines.",
+        "Distinguished inherent, current residual and target exposure, retaining above-appetite risk until remediation is demonstrated.",
+        "Built a filterable risk heat map, searchable register, CSV export and printable executive briefing; documented synthetic evidence and assessment limitations."
+      ]
+    },
+    {
+      "name": "Cloud GRC OSCAL Platform",
+      "subtitle": "Python and Flask dashboard for synthetic cloud findings and structured security documentation",
+      "link": "https://github.com/shassanahmed93-rgb/cloud-grc-oscal-platform",
+      "tags": [
+        "Python",
+        "Flask",
+        "OSCAL",
+        "NIST SP 800-53",
+        "Pytest"
+      ],
+      "points": [
+        "Built a searchable findings dashboard with illustrative likelihood × impact scoring, risk bands and control references.",
+        "Added CSV export of visible findings and a downloadable example OSCAL System Security Plan in JSON.",
+        "Included automated tests for the risk engine, dashboard and SSP export; uses synthetic findings, with no live AWS collection or compliance certification claim."
+      ]
+    },
+    {
       name: "Enterprise Risk Register and ISO 27001 ISMS Documentation Set",
       subtitle: "Fictional global food manufacturer (6,200 employees, 14 plants, 9 countries)",
       link: "https://github.com/shassanahmed93-rgb/grc-portfolio-to-show",
