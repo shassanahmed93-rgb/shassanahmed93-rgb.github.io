@@ -330,6 +330,16 @@ const SITE = {
         "study": "https://github.com/shassanahmed93-rgb/journal-starter#readme"
       },
       "category": "cloud"
+    },
+    {
+      "name": "Phishing Incident Response Playbook",
+      "subtitle": "Evidence-led BEC response simulation with interactive walkthrough and synthetic artifacts",
+      "link": "https://github.com/shassanahmed93-rgb/phishing-incident-response-playbook",
+      "tags": ["Incident Response", "Phishing / BEC", "NIST SP 800-61", "MITRE ATT&CK", "Synthetic Evidence"],
+      "category": "assurance",
+      "summary": "Walk a fictional phishing incident through triage, containment, recovery, and lessons learned with decision gates and realistic sanitized evidence.",
+      "points": ["One-page response checklist, end-to-end playbook, severity gates, decision flows, roles/RACI, and communication/evidence templates.", "Fictional BEC scenario with UTC timeline and synthetic mail, identity, mailbox, endpoint, and finance evidence plus SHA-256 manifest.", "NIST SP 800-61 Rev. 2 and selected MITRE ATT&CK mapping, with confidence, scope, and evidence limitations documented."],
+      "presentation": {"id":"phishing-ir","kind":"Interactive incident response case study · Synthetic evidence","summary":"Follow a credential phishing and payment-change attempt from report intake through containment and controlled recovery.","metric":"6 response phases","route":"Intake → Triage → Contain → Recover","image":"projects/phishing-ir/cover.svg","demo":"projects/phishing-ir/","study":"https://github.com/shassanahmed93-rgb/phishing-incident-response-playbook"}
     }
   ],
   "certifications": [
