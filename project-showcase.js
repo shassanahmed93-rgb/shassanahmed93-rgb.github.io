@@ -30,7 +30,11 @@
     let touch;
     const autoplay = slider.querySelector("[data-autoplay]");
     const narration = slider.querySelector("[data-narration]");
-    let running = Boolean(autoplay && !reduced.matches);
+    const requested = autoplay ? new URLSearchParams(location.search).get("project") : null;
+    const linkedIndex = requested && /^\d+$/.test(requested) ? Number(requested) - 1 : -1;
+    const validLink = linkedIndex >= 0 && linkedIndex < projects.length;
+    let running = Boolean(autoplay && !reduced.matches && !validLink);
+    const share = make("a", "Link to this project", "slide-share");
     let finished = false;
     let phase = 0;
     let playback;
@@ -86,6 +90,7 @@
       phase = 0;
       revealMedia = undefined;
       animation?.cancel();
+      animation = undefined;
       const project = projects[index];
       const panel = make("article", "", "project-slide");
       const copy = make("div");
@@ -112,7 +117,9 @@
         image.addEventListener("error", () => { image.hidden = true; mediaLabel.textContent = "Workflow preview"; });
         selectImage(0);
         revealMedia = selectImage;
-        visual.append(image, mediaLabel);
+        const frame = make("div", "", "slide-media-frame");
+        frame.append(image);
+        visual.append(frame, mediaLabel);
         if (hasGallery) {
           const controls = make("div", "", "slide-actions");
           project.media.forEach((media, i) => {
@@ -142,8 +149,10 @@
       }
       panel.append(copy, visual);
       viewport.replaceChildren(panel);
+      share.href = "/presentation/?project=" + (index + 1);
+      actions.append(share);
       if (animate && !reduced.matches && panel.animate) {
-        animation = panel.animate([{transform:"translateX(" + direction * 26 + "px)", opacity:.55},{transform:"translateX(0)", opacity:1}], {duration:220,easing:"cubic-bezier(.2,.7,.3,1)"});
+        animation = panel.animate([{transform:"translate3d(" + direction * 18 + "px,0,0)", opacity:.72},{transform:"translate3d(0,0,0)", opacity:1}], {duration:190,easing:"cubic-bezier(.2,.75,.3,1)"});
       }
       status.textContent = (index + 1) + " / " + projects.length;
       picker.value = index;
@@ -187,9 +196,22 @@
         paint();
         schedule();
       });
+      viewport.addEventListener("focusin", () => {
+        if (!running) return;
+        running = false;
+        paint();
+        schedule();
+      });
+      reduced.addEventListener?.("change", () => {
+        if (!reduced.matches) return;
+        animation?.cancel();
+        running = false;
+        paint();
+        schedule();
+      });
       document.addEventListener("visibilitychange", schedule);
     }
-    show(0, false);
+    show(validLink ? linkedIndex : 0, false);
   }
   const full = document.querySelector("[data-fullscreen]");
   if (!full || !document.fullscreenEnabled) return;
