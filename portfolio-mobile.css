@@ -1,0 +1,33 @@
+/* Phone layouts and touch targets. */
+@media(max-width:720px){
+ html{scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+ body{overflow-wrap:anywhere}
+ #top.wrap,.deck-wrap,body>main{padding-inline:clamp(14px,4vw,24px)}
+ #top>section{padding-block:36px}
+ #top .hero{padding-block:28px 34px;gap:18px}
+ #top .hero-statement{font-size:clamp(2.05rem,10vw,4rem);margin-block:14px 18px}
+ #top .signal-scene svg{max-height:285px}
+ nav .wrap{padding-inline:clamp(14px,4vw,24px)}
+ .menu-toggle{min-height:44px}
+ .nav-links.open{max-height:calc(100dvh - 56px);overflow-y:auto;overscroll-behavior:contain}
+ .nav-links a,.btn,.button,.filter-button,.slide-actions a,.filters button,.actions button{box-sizing:border-box;min-height:44px;display:inline-flex;align-items:center}
+ .btns,.recruiter-start,.project-actions,.slide-actions,.actions{gap:8px}
+ .project-card:not([hidden]),.skills,.certs,.contact,.case-grid{grid-template-columns:minmax(0,1fr)}
+ .project-preview img{max-height:225px}
+ .project-body,.lab-banner{padding:17px}
+ .project-showcase{margin-block:14px 24px;border-radius:14px}
+ .slider-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:10px}
+ .slider-toolbar select{grid-column:1/-1;width:100%;min-width:0;max-width:none;font-size:16px}
+ .slider-toolbar [data-autoplay]{grid-row:2;grid-column:1/-1;width:100%}
+ .slider-toolbar:has([data-autoplay])>div{grid-row:1;grid-column:2}
+ .project-slide{grid-template-columns:minmax(0,1fr);gap:12px;padding:14px}
+ .project-slide h2{font-size:clamp(1.35rem,6vw,1.9rem)}
+ .presentation-narration,.slide-visual{padding:12px;min-height:0}
+ .slide-media-frame,.slide-media-frame img{max-height:180px}
+ .evidence pre,.grid pre,.slide-visual pre{min-height:0;max-height:17rem;overflow:auto}
+ textarea{box-sizing:border-box;max-width:100%;font-size:16px;min-height:11rem}
+ .grid:has(>.lab),.grid:has(>.input){grid-template-columns:minmax(0,1fr)}
+ .risk-example th:first-child{width:42%}
+ .risk-example{padding-inline:8px}
+}
+@media(hover:none) and (pointer:coarse){.slide-track{touch-action:pan-y pinch-zoom}}
