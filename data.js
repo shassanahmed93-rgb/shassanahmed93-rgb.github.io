@@ -10,7 +10,7 @@ const SITE = {
   "phone": "+92 333 2124852",
   "linkedin": "https://linkedin.com/in/syed-hassan-ahmed-a333bba2",
   "github": "https://github.com/shassanahmed93-rgb",
-  "resumePdf": "Syed_Hassan_Ahmed_Resume_2026-11-05.pdf",
+  "resumePdf": "Syed_Hassan_Ahmed_Resume_2026-11-09.pdf",
   "summary": [
     "Governance, Risk & Compliance (GRC) analyst with a 10-year background in regulated broadcast media, now focused on IT risk management, information security compliance, and cloud security.",
     "AWS Certified Cloud Practitioner, Empire Certified GRC Analyst (ECGRC), and CyberExam Certified GRC Practitioner, with training in ISO/IEC 27001:2022 Implementation, ISO/IEC 27701 (Lead Auditor), SOC 2, NIST CSF 2.0, NIST RMF, and PCI DSS 4.0.1.",

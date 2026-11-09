@@ -27,7 +27,6 @@
     slider.querySelector(".slider-toolbar").append(picker);
     let index = 0;
     let animation;
-    let timer;
     let touch;
     const autoplay = slider.querySelector("[data-autoplay]");
     const narration = slider.querySelector("[data-narration]");
@@ -86,8 +85,6 @@
       index = newIndex;
       phase = 0;
       revealMedia = undefined;
-      clearInterval(timer);
-      timer = undefined;
       animation?.cancel();
       const project = projects[index];
       const panel = make("article", "", "project-slide");
@@ -138,27 +135,6 @@
       project.frames.forEach(frame => list.append(make("li", frame)));
       visual.append(list);
       steps = list;
-      const play = make("button", "Play walkthrough");
-      play.type = "button";
-      function reset() {
-        clearInterval(timer);
-        timer = undefined;
-        for (const step of list.children) step.removeAttribute("aria-current");
-        play.textContent = "Play walkthrough";
-      }
-      play.addEventListener("click", () => {
-        if (timer !== undefined) return reset();
-        let step = 0;
-        list.children[0].setAttribute("aria-current", "step");
-        play.textContent = "Pause walkthrough";
-        timer = setInterval(() => {
-          list.children[step].removeAttribute("aria-current");
-          step++;
-          if (step === list.children.length) return reset();
-          list.children[step].setAttribute("aria-current", "step");
-        }, 1500);
-      });
-      if (!autoplay) visual.append(play);
       if (project.output) {
         const output = make("details");
         output.append(make("summary", "See sample output"), make("pre", project.output));
