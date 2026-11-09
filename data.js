@@ -365,16 +365,25 @@ const SITE = {
       "category": "governance",
       "link": null,
       "points": [
-        "A GRC platform connecting assessments, evidence, and risk treatment."
+        "Compare inherent and residual risk on 5×5 heat maps, apply organization-specific appetite thresholds, and track treatment owners and due dates.",
+        "Link versioned, SHA-256-verified evidence to controls, risks, and audit workpapers. Track review and expiry dates.",
+        "Manage audit workpapers, evidence requests, findings, and remediation. Record risk acceptances with an approver rationale and expiry.",
+        "The source repository is private. The authenticated demo runs in an isolated local test environment. The public walkthrough explains the project with an illustrative example."
       ],
       "presentation": {
         "id": "grc-sentinel",
         "kind": "Application · Private source",
-        "summary": "A GRC platform connecting assessments, evidence, and risk treatment.",
-        "metric": "Evidence → assessment → remediation",
-        "route": "Architecture and workflow",
+        "summary": "A private GRC application that links organization-level risk scoring, evidence integrity, and audit remediation.",
+        "metric": "Risk → evidence → finding → remediation",
+        "route": "Score → Verify → Track → Review",
         "study": "/projects/grc-sentinel/"
-      }
+      },
+      "tags": [
+        "Risk scoring",
+        "Evidence integrity",
+        "Audit workflows",
+        "Role-based access"
+      ]
     },
     {
       "name": "Journal API · CloudFormation Deployment",
@@ -406,22 +415,6 @@ const SITE = {
         "metric": "18 challenges available in the lab",
         "route": "Learning exercise",
         "study": "https://github.com/shassanahmed93-rgb/linux-ctfs#readme"
-      }
-    },
-    {
-      "name": "Cloud Networking Lab",
-      "category": "practice",
-      "link": "https://github.com/shassanahmed93-rgb/networking-lab",
-      "points": [
-        "A troubleshooting lab for cloud routes, DNS, firewall rules, and connectivity."
-      ],
-      "presentation": {
-        "id": "networking-lab",
-        "kind": "Learning repository · Learn to Cloud fork",
-        "summary": "A troubleshooting lab for cloud routes, DNS, firewall rules, and connectivity.",
-        "metric": "Diagnose → fix → validate",
-        "route": "Learning exercise",
-        "study": "https://github.com/shassanahmed93-rgb/networking-lab#readme"
       }
     }
   ],

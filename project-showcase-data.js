@@ -17,7 +17,8 @@ window.PORTFOLIO_SLIDES = [
         "url": "/projects/vendor-risk/cover.svg",
         "label": "Project cover"
       }
-    ]
+    ],
+    "presentationId": 1
   },
   {
     "title": "AWS–SOC 2 Evidence Mapping",
@@ -37,7 +38,8 @@ window.PORTFOLIO_SLIDES = [
         "url": "/projects/aws-soc2/cover.svg",
         "label": "Project cover"
       }
-    ]
+    ],
+    "presentationId": 2
   },
   {
     "title": "Cloud Credential Incident Tabletop",
@@ -57,7 +59,8 @@ window.PORTFOLIO_SLIDES = [
         "url": "/projects/incident-tabletop/cover.svg",
         "label": "Project cover"
       }
-    ]
+    ],
+    "presentationId": 3
   },
   {
     "title": "Cloud Controls Mock Internal Audit",
@@ -77,7 +80,8 @@ window.PORTFOLIO_SLIDES = [
         "url": "/projects/internal-audit/cover.svg",
         "label": "Project cover"
       }
-    ]
+    ],
+    "presentationId": 4
   },
   {
     "title": "Cloud Assurance Lab",
@@ -90,7 +94,8 @@ window.PORTFOLIO_SLIDES = [
       "Identify a cloud risk",
       "Test the linked control",
       "Record a finding and treatment"
-    ]
+    ],
+    "presentationId": 5
   },
   {
     "title": "Cloud GRC OSCAL Platform",
@@ -118,7 +123,8 @@ window.PORTFOLIO_SLIDES = [
         "url": "https://raw.githubusercontent.com/shassanahmed93-rgb/cloud-grc-oscal-platform/main/screenshots/findings-and-controls2.png",
         "label": "Additional findings screenshot"
       }
-    ]
+    ],
+    "presentationId": 6
   },
   {
     "title": "Enterprise Risk Register and ISO 27001 ISMS Documentation Set",
@@ -131,7 +137,8 @@ window.PORTFOLIO_SLIDES = [
       "Scope the fictional organization",
       "Assess and score risks",
       "Map controls and policies"
-    ]
+    ],
+    "presentationId": 7
   },
   {
     "title": "Journal API on AWS: Terraform, EKS, CI/CD, OpenTelemetry",
@@ -144,7 +151,8 @@ window.PORTFOLIO_SLIDES = [
       "Build through GitHub Actions",
       "Deploy the image through ECR and EKS",
       "Trace the API to private PostgreSQL"
-    ]
+    ],
+    "presentationId": 8
   },
   {
     "title": "Phishing Incident Response Playbook",
@@ -164,20 +172,22 @@ window.PORTFOLIO_SLIDES = [
         "url": "/projects/phishing-ir/cover.svg",
         "label": "Project cover"
       }
-    ]
+    ],
+    "presentationId": 9
   },
   {
     "title": "GRC Sentinel",
     "label": "Application · Private source",
-    "summary": "A GRC platform connecting assessments, evidence, and risk treatment.",
-    "proof": "Evidence → assessment → remediation",
+    "summary": "A private GRC application that links organization-level risk scoring, evidence integrity, and audit remediation.",
+    "proof": "5×5 risk heat maps · Versioned evidence · Audit workpapers",
     "url": "/projects/grc-sentinel/",
     "source": null,
     "frames": [
-      "Collect control evidence",
-      "Evaluate the assessment",
-      "Assign remediation"
-    ]
+      "Score a risk before and after treatment",
+      "Link and verify supporting evidence",
+      "Assign remediation and record the review decision"
+    ],
+    "presentationId": 10
   },
   {
     "title": "Journal API · CloudFormation Deployment",
@@ -190,7 +200,8 @@ window.PORTFOLIO_SLIDES = [
       "Receive HTTPS through API Gateway",
       "Run FastAPI on EC2",
       "Store data in private RDS"
-    ]
+    ],
+    "presentationId": 11
   },
   {
     "title": "Linux CTF Practice",
@@ -203,20 +214,8 @@ window.PORTFOLIO_SLIDES = [
       "Deploy the learning environment",
       "Investigate the Linux challenge",
       "Validate the result"
-    ]
-  },
-  {
-    "title": "Cloud Networking Lab",
-    "label": "Learning repository · Learn to Cloud fork",
-    "summary": "A troubleshooting lab for cloud routes, DNS, firewall rules, and connectivity.",
-    "proof": "Diagnose → fix → validate",
-    "url": "https://github.com/shassanahmed93-rgb/networking-lab#readme",
-    "source": "https://github.com/shassanahmed93-rgb/networking-lab",
-    "frames": [
-      "Read the incident",
-      "Diagnose routes, DNS or firewall rules",
-      "Validate connectivity"
-    ]
+    ],
+    "presentationId": 12
   },
   {
     "title": "AI Phishing Triage Bot",
@@ -230,7 +229,8 @@ window.PORTFOLIO_SLIDES = [
       "Score suspicious messages using sender alignment, urgency and URL evidence.",
       "Compare the outcome and export evidence"
     ],
-    "output": "{\n  \"score\": 100,\n  \"disposition\": \"quarantine for review\",\n  \"evidence\": [\n    \"Reply-To domain differs from sender\",\n    \"Urgency language\",\n    \"Credential request language\",\n    \"Unencrypted URL\"\n  ]\n}"
+    "output": "{\n  \"score\": 100,\n  \"disposition\": \"quarantine for review\",\n  \"evidence\": [\n    \"Reply-To domain differs from sender\",\n    \"Urgency language\",\n    \"Credential request language\",\n    \"Unencrypted URL\"\n  ]\n}",
+    "presentationId": 14
   },
   {
     "title": "AI SOC Copilot",
@@ -244,7 +244,8 @@ window.PORTFOLIO_SLIDES = [
       "Explain a detection and generate evidence-linked investigation steps.",
       "Compare the outcome and export evidence"
     ],
-    "output": "{\n  \"alertId\": \"A-301\",\n  \"priority\": \"high\",\n  \"explanation\": \"Repeated failures followed by a successful login suggest possible credential stuffing.\",\n  \"evidence\": [\n    \"28 failed logins\",\n    \"1 successful logins\",\n    \"Account: demo-user\"\n  ],\n  \"nextSteps\": [\n    \"Verify the successful session and source IP\",\n    \"Correlate MFA and device events\",\n    \"Record evidence before containment\"\n  ]\n}"
+    "output": "{\n  \"alertId\": \"A-301\",\n  \"priority\": \"high\",\n  \"explanation\": \"Repeated failures followed by a successful login suggest possible credential stuffing.\",\n  \"evidence\": [\n    \"28 failed logins\",\n    \"1 successful logins\",\n    \"Account: demo-user\"\n  ],\n  \"nextSteps\": [\n    \"Verify the successful session and source IP\",\n    \"Correlate MFA and device events\",\n    \"Record evidence before containment\"\n  ]\n}",
+    "presentationId": 15
   },
   {
     "title": "Cloud Attack Detector",
@@ -258,7 +259,8 @@ window.PORTFOLIO_SLIDES = [
       "Flag CloudTrail and Azure Activity operations that weaken logging or elevate access.",
       "Compare the outcome and export evidence"
     ],
-    "output": "{\n  \"scanned\": 3,\n  \"count\": 2,\n  \"findings\": [\n    {\n      \"id\": \"aws-4\",\n      \"provider\": \"AWS\",\n      \"operation\": \"StopLogging\",\n      \"reason\": \"Logging disabled\"\n    },\n    {\n      \"id\": \"az-4\",\n      \"provider\": \"Azure\",\n      \"operation\": \"microsoft.authorization/roleassignments/write\",\n      \"reason\": \"Role assignment changed\"\n    }\n  ]\n}"
+    "output": "{\n  \"scanned\": 3,\n  \"count\": 2,\n  \"findings\": [\n    {\n      \"id\": \"aws-4\",\n      \"provider\": \"AWS\",\n      \"operation\": \"StopLogging\",\n      \"reason\": \"Logging disabled\"\n    },\n    {\n      \"id\": \"az-4\",\n      \"provider\": \"Azure\",\n      \"operation\": \"microsoft.authorization/roleassignments/write\",\n      \"reason\": \"Role assignment changed\"\n    }\n  ]\n}",
+    "presentationId": 16
   },
   {
     "title": "Identity Attack Detector",
@@ -272,7 +274,8 @@ window.PORTFOLIO_SLIDES = [
       "Find clusters of login failures followed by success for the same account.",
       "Compare the outcome and export evidence"
     ],
-    "output": "{\n  \"count\": 1,\n  \"findings\": [\n    {\n      \"user\": \"demo-user\",\n      \"time\": 140,\n      \"failures\": 3,\n      \"windowSeconds\": 300\n    }\n  ]\n}"
+    "output": "{\n  \"count\": 1,\n  \"findings\": [\n    {\n      \"user\": \"demo-user\",\n      \"time\": 140,\n      \"failures\": 3,\n      \"windowSeconds\": 300\n    }\n  ]\n}",
+    "presentationId": 17
   },
   {
     "title": "AI Log Analyzer",
@@ -286,7 +289,8 @@ window.PORTFOLIO_SLIDES = [
       "Scan a deterministic million-event workload and isolate the injected detection.",
       "Compare the outcome and export evidence"
     ],
-    "output": "{\n  \"scanned\": 1000000,\n  \"count\": 1,\n  \"findings\": [\n    {\n      \"index\": 824139,\n      \"path\": \"/etc/passwd\",\n      \"rule\": \"sensitive-path-access\"\n    }\n  ]\n}"
+    "output": "{\n  \"scanned\": 1000000,\n  \"count\": 1,\n  \"findings\": [\n    {\n      \"index\": 824139,\n      \"path\": \"/etc/passwd\",\n      \"rule\": \"sensitive-path-access\"\n    }\n  ]\n}",
+    "presentationId": 18
   },
   {
     "title": "Auto IOC Blocker",
@@ -300,7 +304,8 @@ window.PORTFOLIO_SLIDES = [
       "Evaluate indicators against allowlists, confidence, and corroborating sources in dry run.",
       "Compare the outcome and export evidence"
     ],
-    "output": "{\n  \"mode\": \"dry run\",\n  \"proposed\": 1,\n  \"decisions\": [\n    {\n      \"ip\": \"192.0.2.5\",\n      \"action\": \"allowlisted\"\n    },\n    {\n      \"ip\": \"203.0.113.25\",\n      \"action\": \"propose block\"\n    },\n    {\n      \"ip\": \"198.51.100.4\",\n      \"action\": \"review\"\n    }\n  ]\n}"
+    "output": "{\n  \"mode\": \"dry run\",\n  \"proposed\": 1,\n  \"decisions\": [\n    {\n      \"ip\": \"192.0.2.5\",\n      \"action\": \"allowlisted\"\n    },\n    {\n      \"ip\": \"203.0.113.25\",\n      \"action\": \"propose block\"\n    },\n    {\n      \"ip\": \"198.51.100.4\",\n      \"action\": \"review\"\n    }\n  ]\n}",
+    "presentationId": 19
   },
   {
     "title": "AI Risk Register",
@@ -314,7 +319,8 @@ window.PORTFOLIO_SLIDES = [
       "Prioritize risks by likelihood and impact and expose ownership and treatment.",
       "Compare the outcome and export evidence"
     ],
-    "output": "{\n  \"high\": 1,\n  \"risks\": [\n    {\n      \"id\": \"R-01\",\n      \"scenario\": \"Overprivileged production account\",\n      \"likelihood\": 4,\n      \"impact\": 5,\n      \"owner\": \"Platform\",\n      \"treatment\": \"Reduce permissions\",\n      \"score\": 20,\n      \"tier\": \"high\",\n      \"followUp\": \"Review with risk owner\"\n    },\n    {\n      \"id\": \"R-02\",\n      \"scenario\": \"Delayed test restore\",\n      \"likelihood\": 2,\n      \"impact\": 3,\n      \"owner\": \"Operations\",\n      \"treatment\": \"Schedule restore drill\",\n      \"score\": 6,\n      \"tier\": \"low\",\n      \"followUp\": \"Review with risk owner\"\n    }\n  ]\n}"
+    "output": "{\n  \"high\": 1,\n  \"risks\": [\n    {\n      \"id\": \"R-01\",\n      \"scenario\": \"Overprivileged production account\",\n      \"likelihood\": 4,\n      \"impact\": 5,\n      \"owner\": \"Platform\",\n      \"treatment\": \"Reduce permissions\",\n      \"score\": 20,\n      \"tier\": \"high\",\n      \"followUp\": \"Review with risk owner\"\n    },\n    {\n      \"id\": \"R-02\",\n      \"scenario\": \"Delayed test restore\",\n      \"likelihood\": 2,\n      \"impact\": 3,\n      \"owner\": \"Operations\",\n      \"treatment\": \"Schedule restore drill\",\n      \"score\": 6,\n      \"tier\": \"low\",\n      \"followUp\": \"Review with risk owner\"\n    }\n  ]\n}",
+    "presentationId": 20
   },
   {
     "title": "AI Incident Plan",
@@ -328,7 +334,8 @@ window.PORTFOLIO_SLIDES = [
       "Draft a phased playbook for a compromised account or cloud exposure.",
       "Compare the outcome and export evidence"
     ],
-    "output": "{\n  \"status\": \"draft for review\",\n  \"lead\": \"SOC lead\",\n  \"severity\": \"high\",\n  \"phases\": [\n    {\n      \"phase\": \"Validate\",\n      \"action\": \"Preserve and timestamp evidence\",\n      \"evidence\": [\n        \"Authentication logs\",\n        \"MFA challenge history\"\n      ]\n    },\n    {\n      \"phase\": \"Contain\",\n      \"action\": \"Revoke suspicious sessions after preserving evidence\"\n    },\n    {\n      \"phase\": \"Recover\",\n      \"action\": \"Rotate affected credentials and re-enroll MFA\"\n    },\n    {\n      \"phase\": \"Close\",\n      \"action\": \"Record impact, verify recovery, and assign follow-up owners\"\n    }\n  ]\n}"
+    "output": "{\n  \"status\": \"draft for review\",\n  \"lead\": \"SOC lead\",\n  \"severity\": \"high\",\n  \"phases\": [\n    {\n      \"phase\": \"Validate\",\n      \"action\": \"Preserve and timestamp evidence\",\n      \"evidence\": [\n        \"Authentication logs\",\n        \"MFA challenge history\"\n      ]\n    },\n    {\n      \"phase\": \"Contain\",\n      \"action\": \"Revoke suspicious sessions after preserving evidence\"\n    },\n    {\n      \"phase\": \"Recover\",\n      \"action\": \"Rotate affected credentials and re-enroll MFA\"\n    },\n    {\n      \"phase\": \"Close\",\n      \"action\": \"Record impact, verify recovery, and assign follow-up owners\"\n    }\n  ]\n}",
+    "presentationId": 21
   },
   {
     "title": "Cybersecurity Final Report",
@@ -342,6 +349,7 @@ window.PORTFOLIO_SLIDES = [
       "Generate a one-page incident report with proof, a fix, and a verification decision.",
       "Compare the outcome and export evidence"
     ],
-    "output": "{\n  \"id\": \"IR-010\",\n  \"title\": \"Incident report\",\n  \"finding\": \"Synthetic AWS CloudTrail logging interruption\",\n  \"impact\": \"Potential visibility gap in the synthetic lab\",\n  \"evidence\": [\n    \"E-001 StopLogging at 10:01 UTC\",\n    \"E-002 StartLogging at 10:09 UTC\"\n  ],\n  \"remediation\": {\n    \"fix\": \"Restore logging and restrict StopLogging to break-glass access.\",\n    \"owner\": \"Cloud Operations\"\n  },\n  \"verification\": \"passed\",\n  \"status\": \"ready for closure review\"\n}"
+    "output": "{\n  \"id\": \"IR-010\",\n  \"title\": \"Incident report\",\n  \"finding\": \"Synthetic AWS CloudTrail logging interruption\",\n  \"impact\": \"Potential visibility gap in the synthetic lab\",\n  \"evidence\": [\n    \"E-001 StopLogging at 10:01 UTC\",\n    \"E-002 StartLogging at 10:09 UTC\"\n  ],\n  \"remediation\": {\n    \"fix\": \"Restore logging and restrict StopLogging to break-glass access.\",\n    \"owner\": \"Cloud Operations\"\n  },\n  \"verification\": \"passed\",\n  \"status\": \"ready for closure review\"\n}",
+    "presentationId": 22
   }
 ];

@@ -31,7 +31,7 @@
     const autoplay = slider.querySelector("[data-autoplay]");
     const narration = slider.querySelector("[data-narration]");
     const requested = autoplay ? new URLSearchParams(location.search).get("project") : null;
-    const linkedIndex = requested && /^\d+$/.test(requested) ? Number(requested) - 1 : -1;
+    const linkedIndex = projects.findIndex(project => String(project.presentationId) === requested);
     const validLink = linkedIndex >= 0 && linkedIndex < projects.length;
     let running = Boolean(autoplay && !reduced.matches && !validLink);
     const share = make("a", "Link to this project", "slide-share");
@@ -149,7 +149,7 @@
       }
       panel.append(copy, visual);
       viewport.replaceChildren(panel);
-      share.href = "/presentation/?project=" + (index + 1);
+      share.href = "/presentation/?project=" + project.presentationId;
       actions.append(share);
       if (animate && !reduced.matches && panel.animate) {
         animation = panel.animate([{transform:"translate3d(" + direction * 18 + "px,0,0)", opacity:.72},{transform:"translate3d(0,0,0)", opacity:1}], {duration:190,easing:"cubic-bezier(.2,.75,.3,1)"});
