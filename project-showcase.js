@@ -78,13 +78,14 @@
     function navigate(target) {
       running = false;
       finished = false;
-      show(target);
-      paint();
-      schedule();
+      if (!show(target)) {
+        paint();
+        schedule();
+      }
     }
     function show(target, animate = true) {
       const newIndex = Math.max(0, Math.min(projects.length - 1, target));
-      if (animate && newIndex === index) return;
+      if (animate && newIndex === index) return false;
       const direction = newIndex > index ? 1 : -1;
       index = newIndex;
       phase = 0;
@@ -151,8 +152,8 @@
       viewport.replaceChildren(panel);
       share.href = "/presentation/?project=" + project.presentationId;
       actions.append(share);
-      if (animate && !reduced.matches && panel.animate) {
-        animation = panel.animate([{transform:"translate3d(" + direction * 18 + "px,0,0)", opacity:.72},{transform:"translate3d(0,0,0)", opacity:1}], {duration:190,easing:"cubic-bezier(.2,.75,.3,1)"});
+      if (animate && !reduced.matches && copy.animate) {
+        animation = copy.animate([{transform:"translateX(" + direction * 14 + "px)", opacity:.82},{transform:"translateX(0)", opacity:1}], {duration:160,easing:"cubic-bezier(.2,.75,.3,1)"});
       }
       status.textContent = (index + 1) + " / " + projects.length;
       picker.value = index;
@@ -160,6 +161,7 @@
       next.disabled = index === projects.length - 1;
       paint();
       schedule();
+      return true;
     }
     prev.addEventListener("click", () => navigate(index - 1));
     next.addEventListener("click", () => navigate(index + 1));

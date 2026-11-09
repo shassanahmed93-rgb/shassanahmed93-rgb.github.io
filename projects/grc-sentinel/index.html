@@ -23,10 +23,10 @@
 <article><h3>Audit and remediation</h3><p>Follow audit workpapers, evidence requests, and findings through review. Record risk acceptance with an approver’s rationale and an expiry date.</p></article>
 <article><h3>Access and demo isolation</h3><p>Use role-based access and organization selection in the authenticated workflow. The local demo uses its own SQLite database and evidence storage.</p></article>
 </div></section>
-<section aria-labelledby="example"><h2 id="example">Walk through a cloud access risk</h2><p class="case-tags">Illustrative scenario</p><ol class="case-step">
-<li><strong>Score the risk.</strong> An overly permissive cloud role starts at 20 out of 25, based on likelihood 4 and impact 5.</li>
-<li><strong>Record treatment and evidence.</strong> Assign an owner to narrow the role and link the updated policy and access review to the risk.</li>
-<li><strong>Review residual exposure.</strong> Use the evidence to reassess likelihood at 2, for a residual score of 10 out of 25. Compare that score with the organization’s risk appetite.</li>
-<li><strong>Capture the decision.</strong> Record the review outcome and any follow-up in the risk history so the next reviewer can trace the reasoning.</li>
-</ol></section>
+<section aria-labelledby="workflow"><h2 id="workflow">How the workflow fits together</h2><p class="case-intro">Follow the record from the original risk to the final review. This example uses fictional inputs to show what someone would enter, what GRC Sentinel records, and what a reviewer can check.</p><div class="case-grid">
+<article><h3>1. Define the risk and the test</h3><p>Record the affected cloud role, its owner, and the control that calls for least privilege. The assessment checks whether the role grants more access than the job requires.</p><p><strong>Output:</strong> a risk record with an inherent score of 20/25 and a linked control to review.</p></article>
+<article><h3>2. Collect and verify evidence</h3><p>Attach the current IAM policy and a dated access review. GRC Sentinel records the evidence version, review date, and SHA-256 digest so a reviewer can verify file integrity and see which version informed the assessment.</p><p><strong>Output:</strong> traceable evidence linked to the control and workpaper.</p></article>
+<article><h3>3. Record the gap and assign treatment</h3><p>If the policy includes unnecessary privileges, document the finding in the workpaper. Assign an owner and deadline to narrow the permissions, then retain the updated policy as a new evidence version.</p><p><strong>Output:</strong> a finding and a treatment action with an owner, due date, and status.</p></article>
+<article><h3>4. Retest and record the decision</h3><p>Compare the updated policy against the same control and reassess the remaining exposure. In this example, the residual score drops to 10/25. Compare it with the organization’s risk appetite. If acceptance is appropriate, record the approver’s rationale and an expiry date.</p><p><strong>Output:</strong> a residual score, review decision, and a history the next reviewer can follow.</p></article>
+</div></section>
 </main></body></html>
