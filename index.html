@@ -135,6 +135,8 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 :root{--bg:#0b1320;--panel:#111e2e;--panel-2:#17283a;--line:#32465d;--text:#f1f6ff;--muted:#b2c1d2;--cyan:#88edd4;--amber:#ffd39c;--green:#88edd4}
 body{background:radial-gradient(ellipse at 77% 0%,#193c46 0,transparent 42rem),var(--bg)}body::before{display:none}.wrap{max-width:1180px}nav{background:#0b1320f2}.hero{padding:72px 0 58px;gap:42px;align-items:stretch}.hero h1{font-size:clamp(1.3rem,2.8vw,2rem);letter-spacing:0}.hero h1 span{color:inherit}.hero-statement{font-size:clamp(2.65rem,6.5vw,5.25rem);line-height:1;letter-spacing:-.06em;font-weight:700;margin:18px 0 24px}.hero-note{font-family:var(--mono);color:var(--cyan);letter-spacing:.13em;font-size:.73rem}.avatar{width:86px;height:86px;margin:16px 0;border-radius:22px;border:1px solid var(--line);box-shadow:none}.hero-aside,.lab-banner{background:linear-gradient(145deg,#203749,#142438 70%);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,4vw,36px)}.hero-aside h2{font-size:clamp(1.5rem,3vw,2.25rem);margin:4px 0 18px}.feature-link{display:grid;gap:3px;border-top:1px solid var(--line);padding:14px 0;color:var(--text)}.feature-link strong{font-size:1.17rem}.feature-link span,.feature-link small{color:var(--muted)}.feature-link span{font: .72rem var(--mono)}.journey{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.journey h3,.lab-banner h3{margin:4px 0}.journey article p:last-child,.lab-banner p:last-child{color:var(--muted);margin-bottom:0}.lab-banner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:16px 0 24px}.lab-banner h3{font-size:1.55rem}.card{border-radius:16px}.h h2{font-size:clamp(1.8rem,4vw,2.7rem)}.btn,.filter-button{min-height:44px}.matrix{max-width:430px}.certs{grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}.btn{border-radius:10px}#risk-demo{padding-top:36px}@media(max-width:860px){.hero{padding:40px 0;gap:24px}.journey{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.c,.reveal{opacity:1!important;transform:none!important}}
 </style>
+<link rel="stylesheet" href="/portfolio-motion.css?v=2">
+<script defer src="/portfolio-motion.js?v=2"></script>
 </head>
 <body>
 <a class="skip" href="#top">Skip to main content</a>
@@ -162,7 +164,7 @@ body{background:radial-gradient(ellipse at 77% 0%,#193c46 0,transparent 42rem),v
     <p class="hero-note">PORTFOLIO / GRC &amp; CLOUD SECURITY</p><div id="avatarBox"></div>
     <h1 id="name"></h1>
     <p class="tagline" id="tagline"></p>
-    <p class="hero-statement">From the newsroom<br>to cybersecurity.</p><p class="sum" id="sum1"></p>
+    <p class="hero-statement"><span class="hero-line"><span>Live news.</span></span><span class="hero-line"><span>Cloud security.</span></span></p><p class="sum" id="sum1"></p>
     <details class="more" id="more"><summary>Read full summary</summary></details>
     <div class="seek" id="seek"></div>
     <div class="btns">
@@ -170,12 +172,22 @@ body{background:radial-gradient(ellipse at 77% 0%,#193c46 0,transparent 42rem),v
       <a class="btn" id="heroResume" href="#cv">Download resume</a>
     </div>
   </div>
-  <aside class="hero-aside" aria-label="Selected work"><p class="hero-note">START HERE</p><h2>Explore my work</h2><a class="feature-link" href="#project-assurance"><span>01 / GRC</span><strong>Cloud assurance</strong><small>Follow risk through control testing and remediation.</small></a><a class="feature-link" href="/cyber-labs/"><span>02 / CYBERSECURITY</span><strong>Nine interactive labs</strong><small>Run detection, response, and governance scenarios.</small></a><a class="feature-link" href="#project-journal"><span>03 / CLOUD ENGINEERING</span><strong>Journal API on AWS</strong><small>See how the deployment pipeline and infrastructure fit together.</small></a></aside>
+  <figure class="signal-scene" aria-label="A broadcast waveform becomes a cloud security signal">
+<svg viewBox="0 0 580 465" role="img" aria-labelledby="signal-title">
+<title id="signal-title">From a newsroom signal to a cloud security signal</title>
+<defs><pattern id="scene-grid" width="29" height="29" patternUnits="userSpaceOnUse"><path d="M29 0H0V29" fill="none" stroke="#173530" stroke-opacity=".13"/></pattern></defs>
+<rect width="580" height="465" rx="26" fill="#d4ecab"/><rect width="580" height="465" rx="26" fill="url(#scene-grid)"/>
+<g class="signal-orbits" fill="none" stroke="#24524a" stroke-opacity=".33"><circle cx="290" cy="232" r="87"/><circle cx="290" cy="232" r="128" stroke-dasharray="2 7"/><circle cx="290" cy="232" r="170"/></g>
+<path d="M28 232H106L127 198L151 274L174 214L189 232H391L411 201L431 251L450 232H552" fill="none" stroke="#568576" stroke-width="2"/>
+<path class="signal-trace" pathLength="1" d="M28 232H106L127 198L151 274L174 214L189 232H391L411 201L431 251L450 232H552" fill="none" stroke="#214a40" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g class="signal-core"><circle cx="290" cy="232" r="55" fill="#193f37"/><path d="M290 198l27 11v21c0 19-12 31-27 38-15-7-27-19-27-38v-21z" fill="none" stroke="#e3f8bc" stroke-width="2.5"/><path d="m278 231 8 8 17-19" fill="none" stroke="#e3f8bc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g fill="#193f37" font-family="monospace" font-size="13" letter-spacing="1.6"><text x="30" y="40">01 / ON AIR</text><text x="550" y="427" text-anchor="end">02 / CLOUD SECURITY</text></g>
+</svg><figcaption>From a live broadcast to a security incident, someone has to make sense of the signal.</figcaption></figure>
   
 </div>
 
-<section id="journey" aria-labelledby="journey-title"><div class="h"><h2 id="journey-title">From live news to security governance</h2><p>The work changed. The responsibility for sound decisions stayed familiar.</p></div><div class="journey"><article class="card"><p class="hero-note">01 / NEWSROOM</p><h3>A decade in broadcast journalism</h3><p>At BOL, I coordinated live coverage, wrote procedures, and made publishing decisions under deadline and regulatory pressure.</p></article><article class="card"><p class="hero-note">02 / TRANSITION</p><h3>Learning by building</h3><p>I paired cybersecurity and GRC training with hands-on work in AWS, infrastructure as code, security evidence, and risk assessment.</p></article><article class="card"><p class="hero-note">03 / GRC</p><h3>Applying governance to cloud work</h3><p>At Multi Chaos Media, I assess cloud and workflow risks, map controls, and track remediation with technical and business teams.</p></article></div></section>
-<section id="projects"><div class="h"><h2>Projects and case studies</h2><p>Explore the implementation, decisions, and evidence behind each build.</p></div><div class="project-filters" role="group" aria-label="Filter projects"><button class="filter-button" data-filter="all" aria-pressed="true">All projects</button><button class="filter-button" data-filter="assurance" aria-pressed="false">Assurance &amp; audit</button><button class="filter-button" data-filter="cloud" aria-pressed="false">Cloud engineering</button><button class="filter-button" data-filter="governance" aria-pressed="false">Governance</button></div><p id="projectCount" class="project-count" aria-live="polite"></p><aside class="lab-banner"><div><p class="hero-note">INTERACTIVE COLLECTION</p><h3>Cybersecurity Labs</h3><p>Nine cases across detection, response, and governance. Run a scenario, compare outcomes, and download evidence.</p></div><a class="btn p" href="/cyber-labs/">Open the labs →</a></aside><div class="proj" id="projectsBox"></div></section>
+<section id="journey" aria-labelledby="journey-title"><div class="h"><h2 id="journey-title">From live news to security governance</h2><p>I spent a decade in broadcast journalism. Today I bring the habits I learned there to cloud security and governance.</p></div><div class="journey" data-chapter-progress><article class="card"><p class="hero-note">01 / NEWSROOM</p><h3>A decade in broadcast journalism</h3><p>In a live newsroom, I learned to ask what we could verify, who needed to know, and what could go wrong before we went on air.</p></article><article class="card"><p class="hero-note">02 / TRANSITION</p><h3>Learning by building</h3><p>I took those questions into cybersecurity. I built and deployed an API on AWS, then practiced tracing cloud findings to controls and evidence.</p></article><article class="card"><p class="hero-note">03 / GRC</p><h3>Applying governance to cloud work</h3><p>At Multi Chaos Media, those habits help me assess cloud risk, explain control gaps, and work with teams to follow fixes through.</p></article></div></section>
+<section id="projects"><div class="h"><h2>What I built</h2><p>Start with the decision each project was built to support. Open a case to see the work behind it.</p></div><div class="project-filters" role="group" aria-label="Filter projects"><button class="filter-button" data-filter="all" aria-pressed="true">All projects</button><button class="filter-button" data-filter="assurance" aria-pressed="false">Assurance &amp; audit</button><button class="filter-button" data-filter="cloud" aria-pressed="false">Cloud engineering</button><button class="filter-button" data-filter="governance" aria-pressed="false">Governance</button></div><p id="projectCount" class="project-count" aria-live="polite"></p><aside class="lab-banner"><div><p class="hero-note">INTERACTIVE COLLECTION</p><h3>Cybersecurity Labs</h3><p>Nine cases across detection, response, and governance. Run a scenario, compare outcomes, and download evidence.</p></div><a class="btn p" href="/cyber-labs/">Open the labs →</a></aside><div class="proj" id="projectsBox"></div></section>
 <section id="certifications"><div class="h"><h2>Certifications</h2><p>Credentials &amp; training</p></div><div class="certs" id="certsBox"></div></section>
 <section id="skills"><div class="h"><h2>Skills</h2><p>Core competencies</p></div><div class="skills" id="skillsBox"></div></section>
 <section id="experience"><div class="h"><h2>Experience</h2><p>Where I've worked</p></div><div class="tl" id="expBox"></div></section>
@@ -188,12 +200,7 @@ body{background:radial-gradient(ellipse at 77% 0%,#193c46 0,transparent 42rem),v
   </div>
 </section>
 
-<section id="risk-demo"><div class="h"><h2>Risk scoring example</h2><p>See how control treatment changes illustrative risk ratings.</p></div><div class="matrix" aria-label="Illustrative risk heat map showing risks moving to lower-rated cells after controls are applied">
-    <header><span>risk_register / heat map</span><b>Illustrative data</b></header>
-    <div class="grid" id="grid"></div>
-    <div class="axis"><span>Impact: 1 → 5</span><span>Likelihood: 1 ↑ 5</span></div><p class="matrix-note">Cell score = likelihood × impact. Synthetic examples, not live monitoring.</p>
-    <div class="legend"><span>Inherent risk</span><span class="m">Residual after controls</span></div>
-  </div></section></main>
+</main>
 
 <footer><div class="wrap">© <span id="yr"></span> <span id="fname"></span>. All rights reserved.</div></footer>
 
@@ -231,13 +238,26 @@ body{background:radial-gradient(ellipse at 77% 0%,#193c46 0,transparent 42rem),v
   (S.projects||[]).forEach(function(p,index){
     var m=p.presentation||presentations[index]||{},c=el('article','card project-card reveal',null,$('projectsBox'));c.id='project-'+m.id;
     c.dataset.category=p.category||'governance';
+    var stories={
+      'vendor-risk':['Can this vendor be onboarded?','30 assessment questions'],
+      'aws-soc2':['What evidence would support this control?','12 control workpapers'],
+      'incident-tabletop':['What would the team do after a credential leak?','8 incident injects'],
+      'internal-audit':['How does missing evidence change an audit conclusion?','10 audit workpapers'],
+      'assurance':['Which cloud risks should leadership address first?','8 risks and 5 findings'],
+      'oscal':['How can cloud findings be traced to controls?','OSCAL security plan'],
+      'isms':['How does a fictional manufacturer organize its security program?','75 risk scenarios'],
+      'journal':['How do you ship an API to AWS with federated CI/CD?','Terraform, EKS, and RDS'],
+      'phishing-ir':['How do you contain a phish and verify recovery?','6 response phases']
+    };
+    var story=stories[m.id];
     var preview=el('div','project-preview',null,c);
     if(m.image){var picture=el('img',null,null,preview);picture.src=m.image;picture.alt=p.name+' — project preview';picture.loading='lazy';picture.width=1000;picture.height=480}
     else{var art=el('div','project-art',null,preview);el('span',null,m.kind,art);el('strong',null,m.metric,art);el('span','route',m.route,art)}
-    var body=el('div','project-body',null,c);el('p','project-kicker',m.kind,body);el('h3',null,p.name,body);
+    var body=el('div','project-body',null,c);el('p','project-kicker','CASE '+String(index+1).padStart(2,'0')+' / '+m.kind,body);el('h3',null,p.name,body);
+    if(story){el('p','case-question',story[0],body);el('p','case-proof',story[1],body);}
     el('p','project-description',m.summary,body);var t=el('div','tags',null,body);(p.tags||[]).forEach(function(x){el('span','tag',x,t)});
     var detail=el('details','project-details',null,body);el('summary',null,'Implementation & evidence',detail);if(p.subtitle)el('p','sub',p.subtitle,detail);list(detail,p.points);
-    var actions=el('div','project-actions',null,body);if(m.demo)link(actions,'btn p','View demo ↗',m.demo);if(m.study)link(actions,'btn','Read case study ↗',m.study);if(p.link)link(actions,'btn','GitHub ↗',p.link);
+    var actions=el('div','project-actions',null,body);if(m.demo)link(actions,'btn p','Open project ↗',m.demo);if(m.study)link(actions,m.demo?'btn':'btn p','Read case study ↗',m.study);if(p.link)link(actions,'btn','GitHub ↗',p.link);
   });
   var filterButtons=document.querySelectorAll('[data-filter]');$('projectCount').textContent=S.projects.length+' projects';
   filterButtons.forEach(function(button){button.addEventListener('click',function(){var value=button.dataset.filter,count=0;filterButtons.forEach(function(b){b.setAttribute('aria-pressed',String(b===button))});document.querySelectorAll('.project-card').forEach(function(card){var show=value==='all'||card.dataset.category===value;card.hidden=!show;if(show){count++;card.classList.add('shown')}});$('projectCount').textContent=count+' projects shown';})});
@@ -286,25 +306,12 @@ body{background:radial-gradient(ellipse at 77% 0%,#193c46 0,transparent 42rem),v
   if(S.linkedin)row('LinkedIn','Profile',S.linkedin);
   if(S.github)row('GitHub','shassanahmed93-rgb',S.github);
 
-  // heat map
-  var inh=[[3,3],[4,4],[2,3]],res=[[1,1],[2,1],[1,2]],html='';
-  for(var row2=4;row2>=0;row2--)for(var col=0;col<5;col++){
-    var s=(col+1)*(row2+1),cls=s>=15?'r':(s>=5?'y':'g'),dot='';
-    inh.forEach(function(p){if(p[0]===col&&p[1]===row2)dot=' dot'});
-    res.forEach(function(p){if(p[0]===col&&p[1]===row2)dot=' dot mit'});
-    html+='<div class="c '+cls+dot+'" title="Likelihood '+(row2+1)+', impact '+(col+1)+', score '+s+'" style="animation-delay:'+(((4-row2)*5+col)*28)+'ms">'+s+'</div>';
-  }
-  $('grid').innerHTML=html;
-
   var menu=$('menuToggle'),nav=$('navLinks');
   function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}
   menu.addEventListener('click',function(){var open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open)});
   nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){closeMenu();menu.focus()}});
-  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
-    var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('shown');observer.unobserve(e.target)}})},{threshold:.06});
-    document.querySelectorAll('.reveal').forEach(function(e){observer.observe(e)});document.body.classList.add('motion-ready');
-  }
+
 })();
 </script>
 </body>
