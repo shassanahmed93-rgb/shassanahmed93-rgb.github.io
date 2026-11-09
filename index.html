@@ -137,7 +137,7 @@ body{background:radial-gradient(ellipse at 77% 0%,#193c46 0,transparent 42rem),v
 </style>
 <link rel="stylesheet" href="/portfolio-motion.css?v=ink-5">
 <script defer src="/portfolio-motion.js?v=2"></script>
-<link rel="stylesheet" href="/project-showcase.css?v=ink-4"><script defer src="/project-showcase-data.js?v=ink-4"></script><script defer src="/project-showcase.js?v=ink-4"></script></head>
+<link rel="stylesheet" href="/project-showcase.css?v=ink-4"><script defer src="/project-showcase-data.js?v=ink-4"></script><script defer src="/project-showcase.js?v=ink-4"></script><link rel="stylesheet" href="/portfolio-navy.css?v=1"></head>
 <body>
 <a class="skip" href="#top">Skip to main content</a>
 
@@ -176,12 +176,12 @@ body{background:radial-gradient(ellipse at 77% 0%,#193c46 0,transparent 42rem),v
 <svg viewBox="0 0 580 465" role="img" aria-labelledby="signal-title">
 <title id="signal-title">From a newsroom signal to a cloud security signal</title>
 <defs><pattern id="scene-grid" width="29" height="29" patternUnits="userSpaceOnUse"><path d="M29 0H0V29" fill="none" stroke="#173530" stroke-opacity=".13"/></pattern></defs>
-<rect width="580" height="465" rx="26" fill="#d4ecab"/><rect width="580" height="465" rx="26" fill="url(#scene-grid)"/>
-<g class="signal-orbits" fill="none" stroke="#24524a" stroke-opacity=".33"><circle cx="290" cy="232" r="87"/><circle cx="290" cy="232" r="128" stroke-dasharray="2 7"/><circle cx="290" cy="232" r="170"/></g>
-<path d="M28 232H106L127 198L151 274L174 214L189 232H391L411 201L431 251L450 232H552" fill="none" stroke="#568576" stroke-width="2"/>
-<path class="signal-trace" pathLength="1" d="M28 232H106L127 198L151 274L174 214L189 232H391L411 201L431 251L450 232H552" fill="none" stroke="#214a40" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<g class="signal-core"><circle cx="290" cy="232" r="55" fill="#193f37"/><path d="M290 198l27 11v21c0 19-12 31-27 38-15-7-27-19-27-38v-21z" fill="none" stroke="#e3f8bc" stroke-width="2.5"/><path d="m278 231 8 8 17-19" fill="none" stroke="#e3f8bc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
-<g fill="#193f37" font-family="monospace" font-size="13" letter-spacing="1.6"><text x="30" y="40">01 / ON AIR</text><text x="550" y="427" text-anchor="end">02 / CLOUD SECURITY</text></g>
+<rect width="580" height="465" rx="26" fill="#a2b6d1"/><rect width="580" height="465" rx="26" fill="url(#scene-grid)"/>
+<g class="signal-orbits" fill="none" stroke="#334f73" stroke-opacity=".33"><circle cx="290" cy="232" r="87"/><circle cx="290" cy="232" r="128" stroke-dasharray="2 7"/><circle cx="290" cy="232" r="170"/></g>
+<path d="M28 232H106L127 198L151 274L174 214L189 232H391L411 201L431 251L450 232H552" fill="none" stroke="#526b8c" stroke-width="2"/>
+<path class="signal-trace" pathLength="1" d="M28 232H106L127 198L151 274L174 214L189 232H391L411 201L431 251L450 232H552" fill="none" stroke="#253f62" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g class="signal-core"><circle cx="290" cy="232" r="55" fill="#182b47"/><path d="M290 198l27 11v21c0 19-12 31-27 38-15-7-27-19-27-38v-21z" fill="none" stroke="#e8eff8" stroke-width="2.5"/><path d="m278 231 8 8 17-19" fill="none" stroke="#e8eff8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g fill="#182b47" font-family="monospace" font-size="13" letter-spacing="1.6"><text x="30" y="40">01 / ON AIR</text><text x="550" y="427" text-anchor="end">02 / CLOUD SECURITY</text></g>
 </svg><figcaption>From a live broadcast to a security incident, someone has to make sense of the signal.</figcaption></figure>
   
 </div>
@@ -200,7 +200,7 @@ body{background:radial-gradient(ellipse at 77% 0%,#193c46 0,transparent 42rem),v
   </div>
 </section>
 
-</main>
+<template id="assurance-risk-example"><details class="risk-example"><summary>See how controls change risk scores</summary><p>Illustrative cloud risks. Score = likelihood × impact, on a 25-point scale. The after column shows the estimated risk once treatment is applied.</p><table aria-label="Illustrative scores before and after treatment"><thead><tr><th scope="col">Risk</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody><tr><th scope="row">Overprivileged access</th><td>20 / 25<div class="risk-bar" style="--score:80%" aria-hidden="true"></div></td><td>8 / 25<div class="risk-bar" style="--score:32%" aria-hidden="true"></div></td></tr><tr><th scope="row">Incomplete audit logging</th><td>16 / 25<div class="risk-bar" style="--score:64%" aria-hidden="true"></div></td><td>6 / 25<div class="risk-bar" style="--score:24%" aria-hidden="true"></div></td></tr><tr><th scope="row">Unverified backups</th><td>12 / 25<div class="risk-bar" style="--score:48%" aria-hidden="true"></div></td><td>4 / 25<div class="risk-bar" style="--score:16%" aria-hidden="true"></div></td></tr></tbody></table></details></template></main>
 
 <footer><div class="wrap">© <span id="yr"></span> <span id="fname"></span>. All rights reserved.</div></footer>
 
@@ -256,6 +256,7 @@ body{background:radial-gradient(ellipse at 77% 0%,#193c46 0,transparent 42rem),v
     var body=el('div','project-body',null,c);el('p','project-kicker','CASE '+String(index+1).padStart(2,'0')+' / '+m.kind,body);el('h3',null,p.name,body);
     if(story){el('p','case-question',story[0],body);el('p','case-proof',story[1],body);}
     el('p','project-description',m.summary,body);var t=el('div','tags',null,body);(p.tags||[]).forEach(function(x){el('span','tag',x,t)});
+    if(m.id==='assurance')body.appendChild($('assurance-risk-example').content.cloneNode(true));
     var detail=el('details','project-details',null,body);el('summary',null,'Implementation & evidence',detail);if(p.subtitle)el('p','sub',p.subtitle,detail);list(detail,p.points);
     var actions=el('div','project-actions',null,body);if(m.demo)link(actions,'btn p','Open project ↗',m.demo);if(m.study)link(actions,m.demo?'btn':'btn p','Read case study ↗',m.study);if(p.link)link(actions,'btn','GitHub ↗',p.link);
   });

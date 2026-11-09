@@ -1,0 +1,16 @@
+/* Neutral canvas, slate surfaces, blue actions. */
+:root{--bg:#0b1424;--panel:#19283c;--panel-2:#21344d;--line:#435675;--text:#f2f5fb;--muted:#b9c8dc;--cyan:#82b5ff;--accent:#82b5ff;--green:#b9c8dc;--amber:#b9c8dc;--blue-ink:#0a1c36}
+body,.deck{background:radial-gradient(ellipse at 84% 0%,#182b45 0,transparent 36rem),var(--bg);color:var(--text)}
+nav:not(.deck-nav){background:#0b1424f5}.card,.hero,.lab-banner,.project-preview,.project-showcase{background:var(--panel);border-color:var(--line);color:var(--text)}
+#top>.hero{background:none}.hero p,.deck p,.slide-visual p,.card p:not(.tag){color:var(--muted)}
+a,.deck a,.slide-kicker,.slide-actions a,.slider-toolbar p,.slide-visual summary,.card summary,.case-proof,.hero-line:nth-child(2),.brand i{color:var(--accent)}
+.hero .btn.p,.lab-banner .btn.p,.btn.p,.button:not(.secondary),.slider-toolbar [data-autoplay],.walkthrough-steps li[aria-current=step]{background:var(--accent);border-color:var(--accent);color:var(--blue-ink)}
+.filters button[aria-pressed=true],.filter-button[aria-pressed=true]{background:#253b59;color:var(--accent);border-color:var(--accent)}
+.slide-visual,.stat,.presentation-narration,.project-art,.slide-visual button,.slider-toolbar button,.slider-toolbar select,[data-fullscreen],.secondary{background:var(--panel-2);border-color:var(--line);color:var(--text)}
+.slide-visual img,textarea,pre{background:#101e30;color:var(--text)}.reading-progress,.brand i{background:var(--accent)}.journey::after{background:#7088a8}
+:focus-visible,.deck :focus-visible,.project-showcase :focus-visible{outline-color:var(--accent)}
+.risk-example{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:#142238}
+.risk-example summary{cursor:pointer;color:var(--accent);padding:7px 0}.risk-example p{font-size:.88rem;margin:8px 0}
+.risk-example table{width:100%;border-collapse:collapse;text-align:left;font-size:.82rem;table-layout:fixed}.risk-example th,.risk-example td{padding:6px 4px;border-bottom:1px solid var(--line);vertical-align:top}.risk-example th:first-child{width:44%}
+.risk-bar{height:4px;margin-top:5px;background:#6d87a7;border-radius:4px;width:var(--score);transform-origin:left}.risk-example[open] .risk-bar{animation:risk-reveal 680ms ease-out both}.risk-example[open] td:last-child .risk-bar{animation-delay:180ms}.risk-example td:last-child{color:var(--accent)}
+@keyframes risk-reveal{from{transform:scaleX(0)}to{transform:scaleX(1)}}@media(prefers-reduced-motion:reduce){.risk-example[open] .risk-bar{animation:none}}
