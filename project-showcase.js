@@ -29,11 +29,63 @@
     let animation;
     let timer;
     let touch;
+    const autoplay = slider.querySelector("[data-autoplay]");
+    const narration = slider.querySelector("[data-narration]");
+    let running = Boolean(autoplay && !reduced.matches);
+    let finished = false;
+    let phase = 0;
+    let playback;
+    let steps;
+    let revealMedia;
+    const durations = [4500, 3800, 3800, 3800, 5000];
+    function paint() {
+      if (!autoplay) return;
+      const project = projects[index];
+      for (const [i, step] of [...steps.children].entries()) {
+        if (i + 1 === phase) step.setAttribute("aria-current", "step");
+        else step.removeAttribute("aria-current");
+      }
+      if (revealMedia) revealMedia(Math.min(project.media.length - 1, Math.max(0, phase - 1)));
+      narration.textContent = finished ? "Presentation complete. Replay or choose a project to review." : [
+        "Purpose · " + project.summary,
+        "Journey · " + project.frames[0],
+        "Feature · " + project.frames[1],
+        "Outcome · " + project.frames[2],
+        "Evidence · " + project.proof
+      ][phase];
+      autoplay.textContent = finished ? "Replay presentation" : running ? "Pause presentation" : "Play presentation";
+    }
+    function schedule() {
+      clearTimeout(playback);
+      if (!running || document.hidden) return;
+      playback = setTimeout(() => {
+        if (phase < durations.length - 1) {
+          phase++;
+          paint();
+          schedule();
+        } else if (index < projects.length - 1) {
+          show(index + 1);
+        } else {
+          running = false;
+          finished = true;
+          paint();
+        }
+      }, durations[phase]);
+    }
+    function navigate(target) {
+      running = false;
+      finished = false;
+      show(target);
+      paint();
+      schedule();
+    }
     function show(target, animate = true) {
       const newIndex = Math.max(0, Math.min(projects.length - 1, target));
       if (animate && newIndex === index) return;
       const direction = newIndex > index ? 1 : -1;
       index = newIndex;
+      phase = 0;
+      revealMedia = undefined;
       clearInterval(timer);
       timer = undefined;
       animation?.cancel();
@@ -50,7 +102,10 @@
         const image = make("img");
         image.decoding = "async";
         const mediaLabel = make("p", "", "slide-kicker");
+        let selectedImage = -1;
         function selectImage(i) {
+          if (i === selectedImage) return;
+          selectedImage = i;
           const media = project.media[i];
           image.hidden = false;
           image.src = media.url;
@@ -59,6 +114,7 @@
         }
         image.addEventListener("error", () => { image.hidden = true; mediaLabel.textContent = "Workflow preview"; });
         selectImage(0);
+        revealMedia = selectImage;
         visual.append(image, mediaLabel);
         if (hasGallery) {
           const controls = make("div", "", "slide-actions");
@@ -66,7 +122,12 @@
             const button = make("button", String(i + 1));
             button.type = "button";
             button.setAttribute("aria-label", media.label);
-            button.addEventListener("click", () => selectImage(i));
+            button.addEventListener("click", () => {
+              running = false;
+              schedule();
+              if (autoplay) autoplay.textContent = "Play presentation";
+              selectImage(i);
+            });
             controls.append(button);
           });
           visual.append(controls);
@@ -76,6 +137,7 @@
       const list = make("ol", "", "walkthrough-steps");
       project.frames.forEach(frame => list.append(make("li", frame)));
       visual.append(list);
+      steps = list;
       const play = make("button", "Play walkthrough");
       play.type = "button";
       function reset() {
@@ -96,7 +158,7 @@
           list.children[step].setAttribute("aria-current", "step");
         }, 1500);
       });
-      visual.append(play);
+      if (!autoplay) visual.append(play);
       if (project.output) {
         const output = make("details");
         output.append(make("summary", "See sample output"), make("pre", project.output));
@@ -111,16 +173,18 @@
       picker.value = index;
       prev.disabled = index === 0;
       next.disabled = index === projects.length - 1;
+      paint();
+      schedule();
     }
-    prev.addEventListener("click", () => show(index - 1));
-    next.addEventListener("click", () => show(index + 1));
-    picker.addEventListener("change", () => show(Number(picker.value)));
+    prev.addEventListener("click", () => navigate(index - 1));
+    next.addEventListener("click", () => navigate(index + 1));
+    picker.addEventListener("change", () => navigate(Number(picker.value)));
     slider.addEventListener("keydown", event => {
       if (event.target === picker || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       const target = {ArrowLeft:index-1, ArrowRight:index+1, Home:0, End:projects.length-1}[event.key];
       if (!Number.isInteger(target)) return;
       event.preventDefault();
-      show(target);
+      navigate(target);
     });
     viewport.addEventListener("touchstart", event => {
       const point = event.touches[0];
@@ -132,9 +196,23 @@
       const x = point.clientX - touch.x;
       const y = point.clientY - touch.y;
       touch = undefined;
-      if (Math.abs(x) > 55 && Math.abs(x) > Math.abs(y) * 1.5) show(index + (x < 0 ? 1 : -1));
+      if (Math.abs(x) > 55 && Math.abs(x) > Math.abs(y) * 1.5) navigate(index + (x < 0 ? 1 : -1));
     }, {passive:true});
     viewport.addEventListener("touchcancel", () => { touch = undefined; });
+    if (autoplay) {
+      autoplay.addEventListener("click", () => {
+        if (finished) {
+          finished = false;
+          running = true;
+          show(0, false);
+          return;
+        }
+        running = !running;
+        paint();
+        schedule();
+      });
+      document.addEventListener("visibilitychange", schedule);
+    }
     show(0, false);
   }
   const full = document.querySelector("[data-fullscreen]");
