@@ -10,5 +10,5 @@ body{background:radial-gradient(ellipse at 82% 0%,#29394f 0,transparent 36rem),v
 .hero-statement,h1,h2,.deck h1,.project-slide h2{font-family:var(--editorial);letter-spacing:-.035em}
 .hero-statement{font-weight:400;letter-spacing:-.045em}.hero .tagline,.project-slide p{line-height:1.65}
 nav:not(.deck-nav){background:#111925f2}.hero-aside,.lab-banner,.project-preview,.card{background:var(--panel)}.project-preview{background:#223146}
-.btn.p,.hero .btn.p,.lab-banner .btn.p,.button,button:not(.secondary):not(.filter-button):not(.menu-toggle){color:#251a10}.filter-button[aria-pressed=true]{background:#3a3027;color:var(--accent);border-color:var(--accent)}
+.btn.p,.hero .btn.p,.lab-banner .btn.p{color:#251a10}.filter-button[aria-pressed=true]{background:#3a3027;color:var(--accent);border-color:var(--accent)}
 .reading-progress{background:#ffcf85}.brand i{background:#ffcf85;box-shadow:none}
