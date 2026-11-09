@@ -1,4 +1,4 @@
-// Portfolio content; project evidence boundaries are shown in each case study.
+// Portfolio content and project evidence.
 const SITE = {
   "firstName": "Syed Hassan",
   "lastName": "Ahmed",
@@ -335,11 +335,94 @@ const SITE = {
       "name": "Phishing Incident Response Playbook",
       "subtitle": "Evidence-led BEC response simulation with interactive walkthrough and synthetic artifacts",
       "link": "https://github.com/shassanahmed93-rgb/phishing-incident-response-playbook",
-      "tags": ["Incident Response", "Phishing / BEC", "NIST SP 800-61", "MITRE ATT&CK", "Synthetic Evidence"],
+      "tags": [
+        "Incident Response",
+        "Phishing / BEC",
+        "NIST SP 800-61",
+        "MITRE ATT&CK",
+        "Synthetic Evidence"
+      ],
       "category": "assurance",
       "summary": "Walk a fictional phishing incident through triage, containment, recovery, and lessons learned with decision gates and realistic sanitized evidence.",
-      "points": ["One-page response checklist, end-to-end playbook, severity gates, decision flows, roles/RACI, and communication/evidence templates.", "Fictional BEC scenario with UTC timeline and synthetic mail, identity, mailbox, endpoint, and finance evidence plus SHA-256 manifest.", "NIST SP 800-61 Rev. 3 and selected MITRE ATT&CK mapping, with confidence, scope, and evidence limitations documented."],
-      "presentation": {"id":"phishing-ir","kind":"Interactive incident response case study · Synthetic evidence","summary":"Follow a credential phishing and payment-change attempt from report intake through containment and controlled recovery.","metric":"6 response phases","route":"Intake → Triage → Contain → Recover","image":"projects/phishing-ir/cover.svg","demo":"projects/phishing-ir/","study":"https://github.com/shassanahmed93-rgb/phishing-incident-response-playbook"}
+      "points": [
+        "One-page response checklist, end-to-end playbook, severity gates, decision flows, roles/RACI, and communication/evidence templates.",
+        "Fictional BEC scenario with UTC timeline and synthetic mail, identity, mailbox, endpoint, and finance evidence plus SHA-256 manifest.",
+        "NIST SP 800-61 Rev. 3 and selected MITRE ATT&CK mapping, with confidence, scope, and evidence limitations documented."
+      ],
+      "presentation": {
+        "id": "phishing-ir",
+        "kind": "Interactive incident response case study · Synthetic evidence",
+        "summary": "Follow a credential phishing and payment-change attempt from report intake through containment and controlled recovery.",
+        "metric": "6 response phases",
+        "route": "Intake → Triage → Contain → Recover",
+        "image": "projects/phishing-ir/cover.svg",
+        "demo": "projects/phishing-ir/",
+        "study": "https://github.com/shassanahmed93-rgb/phishing-incident-response-playbook"
+      }
+    },
+    {
+      "name": "GRC Sentinel",
+      "category": "governance",
+      "link": null,
+      "points": [
+        "A GRC platform connecting assessments, evidence, and risk treatment."
+      ],
+      "presentation": {
+        "id": "grc-sentinel",
+        "kind": "Application · Private source",
+        "summary": "A GRC platform connecting assessments, evidence, and risk treatment.",
+        "metric": "Evidence → assessment → remediation",
+        "route": "Architecture and workflow",
+        "study": "/projects/grc-sentinel/"
+      }
+    },
+    {
+      "name": "Journal API · CloudFormation Deployment",
+      "category": "cloud",
+      "link": "https://github.com/shassanahmed93-rgb/journal-api-aws",
+      "points": [
+        "A second Journal API architecture with API Gateway, EC2, and private PostgreSQL."
+      ],
+      "presentation": {
+        "id": "journal-cloudformation",
+        "kind": "Cloud deployment · Resources retired",
+        "summary": "A second Journal API architecture with API Gateway, EC2, and private PostgreSQL.",
+        "metric": "API Gateway → EC2 → private RDS",
+        "route": "Architecture and workflow",
+        "study": "https://github.com/shassanahmed93-rgb/journal-api-aws#readme"
+      }
+    },
+    {
+      "name": "Linux CTF Practice",
+      "category": "practice",
+      "link": "https://github.com/shassanahmed93-rgb/linux-ctfs",
+      "points": [
+        "Linux and cloud practice covering log analysis, permissions, and network services."
+      ],
+      "presentation": {
+        "id": "linux-ctf",
+        "kind": "Hands-on learning · Learn to Cloud fork",
+        "summary": "Linux and cloud practice covering log analysis, permissions, and network services.",
+        "metric": "18 challenges available in the lab",
+        "route": "Learning exercise",
+        "study": "https://github.com/shassanahmed93-rgb/linux-ctfs#readme"
+      }
+    },
+    {
+      "name": "Cloud Networking Lab",
+      "category": "practice",
+      "link": "https://github.com/shassanahmed93-rgb/networking-lab",
+      "points": [
+        "A troubleshooting lab for cloud routes, DNS, firewall rules, and connectivity."
+      ],
+      "presentation": {
+        "id": "networking-lab",
+        "kind": "Learning repository · Learn to Cloud fork",
+        "summary": "A troubleshooting lab for cloud routes, DNS, firewall rules, and connectivity.",
+        "metric": "Diagnose → fix → validate",
+        "route": "Learning exercise",
+        "study": "https://github.com/shassanahmed93-rgb/networking-lab#readme"
+      }
     }
   ],
   "certifications": [
