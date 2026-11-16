@@ -116,6 +116,34 @@ const SITE = {
     }
   ],
   "projects": [
+  {
+  "slug": "ai-vulnerability-explainer",
+  "name": "AI Vulnerability Explainer",
+  "subtitle": "Evidence-backed HTTP assessment with a local Ollama adapter",
+  "tags": [
+    "Application Security",
+    "Local AI",
+    "Evidence & Remediation",
+    "Python"
+  ],
+  "category": "practice",
+  "summary": "Trace bounded web checks to measured evidence, clear explanations, and practical remediation guidance.",
+  "points": [
+    "Implemented SQL diagnostic indicators, inert HTML reflection checks, response-policy review, and cookie-attribute checks with explicit confidence and assurance limits.",
+    "Built a local Ollama adapter for structured explanations, plus SQLite history, report exports, and same-endpoint retest comparison.",
+    "Passed 23 automated tests on Windows/Linux with Python 3.11/3.12; real-model inference remains unverified. Explore recorded synthetic results in this case study."
+  ],
+  "link": "https://github.com/shassanahmed93-rgb/AI-Vulnerability-Explainer",
+  "presentation": {
+    "id": "ai-vulnerability-explainer",
+    "kind": "Application security · Local AI integration",
+    "summary": "From an HTTP request to measured evidence, reference remediation, and a carefully qualified next step.",
+    "image": "projects/ai-vulnerability-explainer/cover.svg",
+    "demo": "projects/ai-vulnerability-explainer/",
+    "metric": "23 tests · 4 check categories",
+    "route": "Request → Evidence → Explain → Fix → Retest"
+  }
+},
     {
       "slug": "vendor-risk",
       "name": "Third-Party Risk Assessment",

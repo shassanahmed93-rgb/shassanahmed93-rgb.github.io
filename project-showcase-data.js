@@ -1,4 +1,25 @@
 window.PORTFOLIO_SLIDES = [
+{
+  "title": "AI Vulnerability Explainer",
+  "label": "Application security · Recorded synthetic examples",
+  "summary": "From an HTTP request to measured evidence, reference remediation, and a carefully qualified next step.",
+  "proof": "23 automated tests passed; sample reports use rules-only fixture results. Real-model inference still needs a smoke test.",
+  "url": "/projects/ai-vulnerability-explainer/",
+  "source": "https://github.com/shassanahmed93-rgb/AI-Vulnerability-Explainer",
+  "image": "/projects/ai-vulnerability-explainer/cover.svg",
+  "frames": [
+    "Inspect the scoped request and recorded baseline",
+    "Review indicators separately from confirmed observations",
+    "Read patch guidance and assess retest limits"
+  ],
+  "media": [
+    {
+      "url": "/projects/ai-vulnerability-explainer/cover.svg",
+      "label": "Request, evidence, and remediation workflow"
+    }
+  ],
+  "presentationId": 23
+},
   {
     "title": "Third-Party Risk Assessment",
     "label": "Public-source research · Fictional buyer",
