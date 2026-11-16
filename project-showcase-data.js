@@ -5,7 +5,7 @@ window.PORTFOLIO_SLIDES = [
   "summary": "From an HTTP request to measured evidence, reference remediation, and a carefully qualified next step.",
   "proof": "23 automated tests passed; sample reports use rules-only fixture results. Real-model inference still needs a smoke test.",
   "url": "/projects/ai-vulnerability-explainer/",
-  "source": "https://github.com/shassanahmed93-rgb/AI-Vulnerability-Explainer",
+  "source": "https://github.com/shassanahmed93-rgb/AI-Vulnerability-Explainer-For-AWS",
   "image": "/projects/ai-vulnerability-explainer/cover.svg",
   "frames": [
     "Inspect the scoped request and recorded baseline",

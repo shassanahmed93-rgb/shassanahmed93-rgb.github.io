@@ -133,7 +133,7 @@ const SITE = {
     "Built a local Ollama adapter for structured explanations, plus SQLite history, report exports, and same-endpoint retest comparison.",
     "Passed 23 automated tests on Windows/Linux with Python 3.11/3.12; real-model inference remains unverified. Explore recorded synthetic results in this case study."
   ],
-  "link": "https://github.com/shassanahmed93-rgb/AI-Vulnerability-Explainer",
+  "link": "https://github.com/shassanahmed93-rgb/AI-Vulnerability-Explainer-For-AWS",
   "presentation": {
     "id": "ai-vulnerability-explainer",
     "kind": "Application security · Local AI integration",
