@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 /* Neutral canvas, slate surfaces, blue actions. */
 :root{--bg:#0b1424;--panel:#19283c;--panel-2:#21344d;--line:#435675;--text:#f2f5fb;--muted:#b9c8dc;--cyan:#82b5ff;--accent:#82b5ff;--green:#b9c8dc;--amber:#b9c8dc;--blue-ink:#0a1c36}
 body,.deck{background:radial-gradient(ellipse at 84% 0%,#182b45 0,transparent 36rem),var(--bg);color:var(--text)}
@@ -14,3 +15,37 @@ a,.deck a,.slide-kicker,.slide-actions a,.slider-toolbar p,.slide-visual summary
 .risk-example table{width:100%;border-collapse:collapse;text-align:left;font-size:.82rem;table-layout:fixed}.risk-example th,.risk-example td{padding:6px 4px;border-bottom:1px solid var(--line);vertical-align:top}.risk-example th:first-child{width:44%}
 .risk-bar{height:4px;margin-top:5px;background:#6d87a7;border-radius:4px;width:var(--score);transform-origin:left}.risk-example[open] .risk-bar{animation:risk-reveal 680ms ease-out both}.risk-example[open] td:last-child .risk-bar{animation-delay:180ms}.risk-example td:last-child{color:var(--accent)}
 @keyframes risk-reveal{from{transform:scaleX(0)}to{transform:scaleX(1)}}@media(prefers-reduced-motion:reduce){.risk-example[open] .risk-bar{animation:none}}
+
+/* Typography: Space Grotesk for hierarchy, DM Sans for sustained reading. */
+:root{
+ --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+ --font:var(--sans);
+ --heading:"Space Grotesk",var(--sans);
+}
+body,.deck{font-family:var(--sans);font-size:1rem;line-height:1.7}
+button,input,select{font-family:var(--sans)}
+h1,h2,h3,h4,h5,h6,.hero-statement,.brand{font-family:var(--heading)}
+h1{line-height:1.12;letter-spacing:-.035em;text-wrap:balance}
+h2{line-height:1.25;letter-spacing:-.025em;text-wrap:balance}
+h3,h4{line-height:1.35;letter-spacing:-.015em;text-wrap:balance}
+.hero h1{line-height:1.12;letter-spacing:-.035em}
+#top .hero-statement{font-family:var(--heading);font-weight:600;line-height:1.08;letter-spacing:-.045em}
+.brand{font-weight:600;letter-spacing:-.025em}
+nav a.l,.nav-links a{font-family:var(--sans);font-weight:500}
+.sum,.project-description,.company-description,.journey .card>p:not(.hero-note){font-size:1rem;line-height:1.75}
+.sum,details.more{max-width:62ch}
+.proj h3,.card h3{font-weight:600;line-height:1.35}
+.co .meta,.role .meta{font-family:var(--sans);font-size:.875rem;line-height:1.6}
+.cert b{font-size:1rem;line-height:1.5;font-weight:600}
+.cert small,.chips span,.project-details,.proof-link{font-size:.875rem}
+.project-kicker,.hero-note{line-height:1.6;letter-spacing:.08em}
+.project-actions a{font-size:.875rem}
+.risk-example table,.stat strong{font-variant-numeric:tabular-nums}
+pre,code,textarea{font-family:var(--mono,ui-monospace,monospace)}
+@media(max-width:720px){
+ body{line-height:1.7}
+ #top .hero h1{font-size:clamp(2rem,8.5vw,2.8rem)}
+ #top .hero-statement{letter-spacing:-.035em;line-height:1.12}
+ .hero-note,.project-kicker{font-size:.75rem}
+ input,select,textarea{font-size:1rem}
+}
