@@ -116,6 +116,30 @@ const SITE = {
     }
   ],
   "projects": [
+    {
+      "slug": "deepfake-fraud-prevention",
+      "name": "Deepfake-fraud-prevention",
+      "subtitle": "Human-centered fraud triage prototype",
+      "tags": ["Fraud Prevention", "Social Engineering", "Explainable Triage", "Security"],
+      "category": "security",
+      "summary": "Explore how explainable message signals, independent verification guidance, and human case review can help teams respond to social-engineering pressure.",
+      "points": [
+        "Built a dark security-operations dashboard with message triage, transparent rule matches, demo cases, and case-status workflow.",
+        "Added production-mode API-key protection, rate limiting, automated checks, and an offline triage evaluation harness.",
+        "Presented with clear scope: the current prototype does not provide validated audio, image, or video deepfake classification or live platform integrations."
+      ],
+      "link": "https://github.com/shassanahmed93-rgb/Deepfake-fraud-prevention",
+      "presentation": {
+        "id": "deepfake-fraud-prevention",
+        "kind": "Security product prototype · Human-reviewed triage",
+        "summary": "Pause the pressure. Trace the signals. Verify the person through a trusted channel.",
+        "image": "projects/sentinel-ai/cover.svg",
+        "demo": "projects/sentinel-ai/",
+        "metric": "Explainable rules · Case review · API hardening",
+        "route": "Submit → Review signals → Verify independently → Track case"
+      }
+    },
+
   {
   "slug": "ai-vulnerability-explainer",
   "name": "AI Vulnerability Explainer",
