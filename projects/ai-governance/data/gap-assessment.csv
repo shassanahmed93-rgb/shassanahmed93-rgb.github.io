@@ -1,0 +1,13 @@
+id,area,baseline,observation,target,owner,day,control,risks,nist
+"G01","Accountability","Missing","No named AI risk owner or approval route in assumed interviews.","AI charter, accountable owners and release authority","GRC Lead","15","C01","R09","GOVERN 2.1; GOVERN 2.3"
+"G02","AI inventory","Missing","Tool list omits owners, inputs, affected people and intended limits.","Four use-case records with lifecycle and review triggers","Operations Lead","15","C02","R01; R03; R09","GOVERN 1.6; MAP 1.1"
+"G03","Shadow AI & training","Missing","Personal AI accounts allowed; no AI-specific onboarding material.","Approved-tool register, acceptable use and training","GRC Lead","30","C03","R09","GOVERN 1.4; GOVERN 2.2"
+"G04","Data protection","Partial","General confidentiality policy exists; no prompt-data classification.","Minimize inputs, block restricted data and verify retention","Privacy Lead","30","C04","R01; R05","MEASURE 2.10"
+"G05","AI suppliers","Missing","Assumed procurement folder lacks AI training and deletion terms.","Vendor review covering reuse, hosting, deletion and subprocessors","Privacy Lead","45","C05","R06","GOVERN 6.1; MANAGE 3.1"
+"G06","Remote access","Partial","MFA exists on email; AI and freelancer access not centrally governed.","SSO/MFA, managed endpoints and scoped time-limited access","IT Lead","30","C06","R02; R08","MEASURE 2.7"
+"G07","Human review","Partial","Ad reviews are informal; no model-output approval record.","Independent approval bound to the exact output revision","Marketing Lead","30","C07","R04; R07","GOVERN 3.2; MAP 3.5"
+"G08","Agent permissions","Missing","Workflow proposal allows broad CRM and advertising connector scopes.","Read-only connectors; deny payments and spend changes","Engineering Lead","45","C08","R03; R10","MEASURE 2.7; MANAGE 2.4"
+"G09","Targeting & fairness","Missing","No review of proxy attributes, consent scope or exclusion effects.","Ban sensitive targeting; contextual fairness and consent review","Marketing Lead","60","C09","R05","MEASURE 2.11"
+"G10","Content provenance","Missing","Creative assets have no recorded rights or synthetic-media review.","Rights checks, required disclosure and verified payment callbacks","Marketing Lead","60","C10","R07; R08","MAP 4.1; GOVERN 6.1"
+"G11","Evaluation & monitoring","Missing","No repeatable AI test set, version baseline or complaint monitoring.","Release tests, weekly sampling and change-triggered re-evaluation","Engineering Lead","60","C11","R03; R04; R05; R10","MEASURE 2.1; MEASURE 2.4"
+"G12","Response & retirement","Partial","Generic incident plan has no AI pause, recall or vendor deletion steps.","AI playbook, kill switch, appeals and decommission checklist","IT Lead","90","C12","R01; R08; R10","MANAGE 2.4; MANAGE 4.1"

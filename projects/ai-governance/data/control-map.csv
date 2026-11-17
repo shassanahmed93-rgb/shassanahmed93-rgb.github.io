@@ -1,0 +1,13 @@
+id,gap,title,owner,nist,day,status
+"C01","G01","AI charter, accountable owners and release authority","GRC Lead","GOVERN 2.1; GOVERN 2.3","15","Documented; deployment unverified"
+"C02","G02","Four use-case records with lifecycle and review triggers","Operations Lead","GOVERN 1.6; MAP 1.1","15","Documented; deployment unverified"
+"C03","G03","Approved-tool register, acceptable use and training","GRC Lead","GOVERN 1.4; GOVERN 2.2","30","Documented; deployment unverified"
+"C04","G04","Minimize inputs, block restricted data and verify retention","Privacy Lead","MEASURE 2.10","30","Documented + selected logic simulated"
+"C05","G05","Vendor review covering reuse, hosting, deletion and subprocessors","Privacy Lead","GOVERN 6.1; MANAGE 3.1","45","Documented; deployment unverified"
+"C06","G06","SSO/MFA, managed endpoints and scoped time-limited access","IT Lead","MEASURE 2.7","30","Documented; deployment unverified"
+"C07","G07","Independent approval bound to the exact output revision","Marketing Lead","GOVERN 3.2; MAP 3.5","30","Documented + selected logic simulated"
+"C08","G08","Read-only connectors; deny payments and spend changes","Engineering Lead","MEASURE 2.7; MANAGE 2.4","45","Documented + selected logic simulated"
+"C09","G09","Ban sensitive targeting; contextual fairness and consent review","Marketing Lead","MEASURE 2.11","60","Documented; deployment unverified"
+"C10","G10","Rights checks, required disclosure and verified payment callbacks","Marketing Lead","MAP 4.1; GOVERN 6.1","60","Documented; deployment unverified"
+"C11","G11","Release tests, weekly sampling and change-triggered re-evaluation","Engineering Lead","MEASURE 2.1; MEASURE 2.4","60","Documented; deployment unverified"
+"C12","G12","AI playbook, kill switch, appeals and decommission checklist","IT Lead","MANAGE 2.4; MANAGE 4.1","90","Documented + selected logic simulated"

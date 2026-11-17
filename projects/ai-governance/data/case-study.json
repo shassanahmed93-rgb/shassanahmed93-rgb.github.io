@@ -1,0 +1,830 @@
+{
+  "title": "NexaReach Studio",
+  "subtitle": "Responsible AI for a remote marketing team",
+  "date": "2026-11-17",
+  "author": "Syed Hassan Ahmed",
+  "portfolio": "https://shassanahmed.space/",
+  "framework": "NIST AI RMF 1.0 + Generative AI Profile (NIST AI 600-1)",
+  "company": {
+    "employees": 32,
+    "freelancers": 8,
+    "clients": 18,
+    "locations": "Pakistan, United Kingdom and United States",
+    "business": "Fictional remote digital marketing agency providing paid advertising, creative production and customer engagement.",
+    "benefit": "Use AI to shorten drafting and support workflows while keeping customer data, campaign decisions and public claims under human control.",
+    "boundary": "All company details, observations, risk ratings and approvals are fictional. This is a portfolio simulation, not a client engagement or assurance opinion."
+  },
+  "systems": [
+    {
+      "id": "AI-01",
+      "name": "Campaign Copilot",
+      "purpose": "Draft ad copy and creative concepts",
+      "data": "Public product facts and approved brand guides",
+      "owner": "Marketing Lead",
+      "oversight": "Marketing reviewer checks every public output",
+      "limit": "No automatic publication; no customer lists",
+      "risks": [
+        "R01",
+        "R04",
+        "R07",
+        "R09"
+      ],
+      "provider": "Illustrative enterprise provider - not yet selected",
+      "modelVersion": "Not selected; record before deployment",
+      "lifecycle": "Design / simulation",
+      "status": "Not approved for production",
+      "reviewTrigger": "Monthly and on any provider, model, data or permission change",
+      "affected": "Clients and their customers; Consumers and clients; Rights holders, depicted people and consumers; Clients, workers and customers"
+    },
+    {
+      "id": "AI-02",
+      "name": "Lead Assistant",
+      "purpose": "Summarize inbound requests and suggest CRM categories",
+      "data": "Synthetic or de-identified lead text",
+      "owner": "Operations Lead",
+      "oversight": "Analyst confirms CRM changes",
+      "limit": "No sensitive profiling, ranking people or autonomous outreach",
+      "risks": [
+        "R01",
+        "R03",
+        "R05",
+        "R06"
+      ],
+      "provider": "Illustrative enterprise provider - not yet selected",
+      "modelVersion": "Not selected; record before deployment",
+      "lifecycle": "Design / simulation",
+      "status": "Not approved for production",
+      "reviewTrigger": "Monthly and on any provider, model, data or permission change",
+      "affected": "Clients and their customers; Customers and campaign owners; Prospects and underrepresented groups; Customers and clients"
+    },
+    {
+      "id": "AI-03",
+      "name": "Support Guide",
+      "purpose": "Draft FAQ responses from an approved knowledge base",
+      "data": "Public FAQ documents; de-identified questions",
+      "owner": "Client Services Lead",
+      "oversight": "Human approves each answer before customer delivery; disputes go to support",
+      "limit": "Draft answers only; no autonomous replies or account access",
+      "risks": [
+        "R03",
+        "R04",
+        "R10"
+      ],
+      "provider": "Illustrative enterprise provider - not yet selected",
+      "modelVersion": "Not selected; record before deployment",
+      "lifecycle": "Design / simulation",
+      "status": "Not approved for production",
+      "reviewTrigger": "Monthly and on any provider, model, data or permission change",
+      "affected": "Customers and campaign owners; Consumers and clients; Clients and support users"
+    },
+    {
+      "id": "AI-04",
+      "name": "Workflow Assistant",
+      "purpose": "Prepare internal campaign reports and task drafts",
+      "data": "Aggregated campaign metrics; approved internal templates",
+      "owner": "Operations Lead",
+      "oversight": "Human signs off external actions",
+      "limit": "Read-only connectors; no payments or ad-spend changes",
+      "risks": [
+        "R02",
+        "R03",
+        "R08",
+        "R10"
+      ],
+      "provider": "Illustrative enterprise provider - not yet selected",
+      "modelVersion": "Not selected; record before deployment",
+      "lifecycle": "Design / simulation",
+      "status": "Not approved for production",
+      "reviewTrigger": "Monthly and on any provider, model, data or permission change",
+      "affected": "Clients, remote workers and the agency; Customers and campaign owners; Agency and suppliers; Clients and support users"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G01",
+      "area": "Accountability",
+      "baseline": "Missing",
+      "observation": "No named AI risk owner or approval route in assumed interviews.",
+      "target": "AI charter, accountable owners and release authority",
+      "owner": "GRC Lead",
+      "day": 15,
+      "control": "C01",
+      "risks": [
+        "R09"
+      ],
+      "nist": [
+        "GOVERN 2.1",
+        "GOVERN 2.3"
+      ]
+    },
+    {
+      "id": "G02",
+      "area": "AI inventory",
+      "baseline": "Missing",
+      "observation": "Tool list omits owners, inputs, affected people and intended limits.",
+      "target": "Four use-case records with lifecycle and review triggers",
+      "owner": "Operations Lead",
+      "day": 15,
+      "control": "C02",
+      "risks": [
+        "R01",
+        "R03",
+        "R09"
+      ],
+      "nist": [
+        "GOVERN 1.6",
+        "MAP 1.1"
+      ]
+    },
+    {
+      "id": "G03",
+      "area": "Shadow AI & training",
+      "baseline": "Missing",
+      "observation": "Personal AI accounts allowed; no AI-specific onboarding material.",
+      "target": "Approved-tool register, acceptable use and training",
+      "owner": "GRC Lead",
+      "day": 30,
+      "control": "C03",
+      "risks": [
+        "R09"
+      ],
+      "nist": [
+        "GOVERN 1.4",
+        "GOVERN 2.2"
+      ]
+    },
+    {
+      "id": "G04",
+      "area": "Data protection",
+      "baseline": "Partial",
+      "observation": "General confidentiality policy exists; no prompt-data classification.",
+      "target": "Minimize inputs, block restricted data and verify retention",
+      "owner": "Privacy Lead",
+      "day": 30,
+      "control": "C04",
+      "risks": [
+        "R01",
+        "R05"
+      ],
+      "nist": [
+        "MEASURE 2.10"
+      ]
+    },
+    {
+      "id": "G05",
+      "area": "AI suppliers",
+      "baseline": "Missing",
+      "observation": "Assumed procurement folder lacks AI training and deletion terms.",
+      "target": "Vendor review covering reuse, hosting, deletion and subprocessors",
+      "owner": "Privacy Lead",
+      "day": 45,
+      "control": "C05",
+      "risks": [
+        "R06"
+      ],
+      "nist": [
+        "GOVERN 6.1",
+        "MANAGE 3.1"
+      ]
+    },
+    {
+      "id": "G06",
+      "area": "Remote access",
+      "baseline": "Partial",
+      "observation": "MFA exists on email; AI and freelancer access not centrally governed.",
+      "target": "SSO/MFA, managed endpoints and scoped time-limited access",
+      "owner": "IT Lead",
+      "day": 30,
+      "control": "C06",
+      "risks": [
+        "R02",
+        "R08"
+      ],
+      "nist": [
+        "MEASURE 2.7"
+      ]
+    },
+    {
+      "id": "G07",
+      "area": "Human review",
+      "baseline": "Partial",
+      "observation": "Ad reviews are informal; no model-output approval record.",
+      "target": "Independent approval bound to the exact output revision",
+      "owner": "Marketing Lead",
+      "day": 30,
+      "control": "C07",
+      "risks": [
+        "R04",
+        "R07"
+      ],
+      "nist": [
+        "GOVERN 3.2",
+        "MAP 3.5"
+      ]
+    },
+    {
+      "id": "G08",
+      "area": "Agent permissions",
+      "baseline": "Missing",
+      "observation": "Workflow proposal allows broad CRM and advertising connector scopes.",
+      "target": "Read-only connectors; deny payments and spend changes",
+      "owner": "Engineering Lead",
+      "day": 45,
+      "control": "C08",
+      "risks": [
+        "R03",
+        "R10"
+      ],
+      "nist": [
+        "MEASURE 2.7",
+        "MANAGE 2.4"
+      ]
+    },
+    {
+      "id": "G09",
+      "area": "Targeting & fairness",
+      "baseline": "Missing",
+      "observation": "No review of proxy attributes, consent scope or exclusion effects.",
+      "target": "Ban sensitive targeting; contextual fairness and consent review",
+      "owner": "Marketing Lead",
+      "day": 60,
+      "control": "C09",
+      "risks": [
+        "R05"
+      ],
+      "nist": [
+        "MEASURE 2.11"
+      ]
+    },
+    {
+      "id": "G10",
+      "area": "Content provenance",
+      "baseline": "Missing",
+      "observation": "Creative assets have no recorded rights or synthetic-media review.",
+      "target": "Rights checks, required disclosure and verified payment callbacks",
+      "owner": "Marketing Lead",
+      "day": 60,
+      "control": "C10",
+      "risks": [
+        "R07",
+        "R08"
+      ],
+      "nist": [
+        "MAP 4.1",
+        "GOVERN 6.1"
+      ]
+    },
+    {
+      "id": "G11",
+      "area": "Evaluation & monitoring",
+      "baseline": "Missing",
+      "observation": "No repeatable AI test set, version baseline or complaint monitoring.",
+      "target": "Release tests, weekly sampling and change-triggered re-evaluation",
+      "owner": "Engineering Lead",
+      "day": 60,
+      "control": "C11",
+      "risks": [
+        "R03",
+        "R04",
+        "R05",
+        "R10"
+      ],
+      "nist": [
+        "MEASURE 2.1",
+        "MEASURE 2.4"
+      ]
+    },
+    {
+      "id": "G12",
+      "area": "Response & retirement",
+      "baseline": "Partial",
+      "observation": "Generic incident plan has no AI pause, recall or vendor deletion steps.",
+      "target": "AI playbook, kill switch, appeals and decommission checklist",
+      "owner": "IT Lead",
+      "day": 90,
+      "control": "C12",
+      "risks": [
+        "R01",
+        "R08",
+        "R10"
+      ],
+      "nist": [
+        "MANAGE 2.4",
+        "MANAGE 4.1"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "R01",
+      "name": "Client data leaks to an AI service",
+      "system": "AI-01 / AI-02",
+      "event": "Remote staff paste a client contact list into an AI tool; customer information is retained or exposed.",
+      "affected": "Clients and their customers",
+      "l": 4,
+      "i": 5,
+      "tl": 2,
+      "ti": 5,
+      "why": "Frequent AI use and no prompt controls make exposure plausible; personal-data impact stays severe.",
+      "treatment": "Mitigate",
+      "response": "Approved enterprise tools, input minimization, restricted-data gate and retention review",
+      "owner": "Privacy Lead",
+      "controls": [
+        "C02",
+        "C04",
+        "C05"
+      ],
+      "day": 45,
+      "proof": "Verified data-flow review, DLP tests and supplier retention settings",
+      "inherent": 20,
+      "target": 10,
+      "band": "Critical",
+      "targetBand": "Moderate",
+      "status": "Open - treatment designed; deployment unverified"
+    },
+    {
+      "id": "R02",
+      "name": "Remote AI or ad account takeover",
+      "system": "All systems",
+      "event": "A stolen freelancer session grants access to campaign or AI workspaces.",
+      "affected": "Clients, remote workers and the agency",
+      "l": 4,
+      "i": 5,
+      "tl": 2,
+      "ti": 5,
+      "why": "Distributed identities and uneven MFA expand exposure; stolen sessions can still cause major harm.",
+      "treatment": "Mitigate",
+      "response": "SSO, phishing-resistant MFA, managed devices, least privilege and rapid revocation",
+      "owner": "IT Lead",
+      "controls": [
+        "C06",
+        "C12"
+      ],
+      "day": 90,
+      "proof": "IdP/endpoint evidence and access revocation drill",
+      "inherent": 20,
+      "target": 10,
+      "band": "Critical",
+      "targetBand": "Moderate",
+      "status": "Open - treatment designed; deployment unverified"
+    },
+    {
+      "id": "R03",
+      "name": "Prompt injection triggers unsafe actions",
+      "system": "AI-02 / AI-03 / AI-04",
+      "event": "Untrusted lead or web text instructs the assistant to disclose data or misuse connectors.",
+      "affected": "Customers and campaign owners",
+      "l": 4,
+      "i": 4,
+      "tl": 2,
+      "ti": 4,
+      "why": "External text is routinely processed; isolated tools reduce opportunity, not the consequence of a bypass.",
+      "treatment": "Mitigate",
+      "response": "Treat external text as data, constrain connectors and gate external actions",
+      "owner": "Engineering Lead",
+      "controls": [
+        "C08",
+        "C11"
+      ],
+      "day": 60,
+      "proof": "Adversarial end-to-end model/connector tests; not demonstrated by metadata simulation",
+      "inherent": 16,
+      "target": 8,
+      "band": "High",
+      "targetBand": "Moderate",
+      "status": "Open - treatment designed; deployment unverified"
+    },
+    {
+      "id": "R04",
+      "name": "Fabricated claims reach customers",
+      "system": "AI-01 / AI-03",
+      "event": "AI invents a product guarantee or policy that is published or repeated by support.",
+      "affected": "Consumers and clients",
+      "l": 4,
+      "i": 4,
+      "tl": 2,
+      "ti": 4,
+      "why": "Generative outputs can be inaccurate; reviewed source material and sign-off lower likelihood.",
+      "treatment": "Mitigate",
+      "response": "Approved source material, independent fact checks, human release and escalation",
+      "owner": "Marketing Lead",
+      "controls": [
+        "C07",
+        "C11"
+      ],
+      "day": 60,
+      "proof": "Claim-verification sample and revision-bound publication approvals",
+      "inherent": 16,
+      "target": 8,
+      "band": "High",
+      "targetBand": "Moderate",
+      "status": "Open - treatment designed; deployment unverified"
+    },
+    {
+      "id": "R05",
+      "name": "Unfair or intrusive audience targeting",
+      "system": "AI-02",
+      "event": "Lead labels infer sensitive characteristics and exclude or manipulate groups.",
+      "affected": "Prospects and underrepresented groups",
+      "l": 3,
+      "i": 4,
+      "tl": 2,
+      "ti": 4,
+      "why": "Proxy attributes can bias categories; harm remains material even after review.",
+      "treatment": "Avoid / mitigate",
+      "response": "Prohibit sensitive profiling; review consent, proxies and subgroup outcomes",
+      "owner": "Marketing Lead",
+      "controls": [
+        "C04",
+        "C09",
+        "C11"
+      ],
+      "day": 60,
+      "proof": "Use-case impact review with affected-user input and representative test data",
+      "inherent": 12,
+      "target": 8,
+      "band": "Moderate",
+      "targetBand": "Moderate",
+      "status": "Open - treatment designed; deployment unverified"
+    },
+    {
+      "id": "R06",
+      "name": "Supplier reuses or transfers client inputs",
+      "system": "AI-02",
+      "event": "An unreviewed supplier trains on prompts or stores client data in an unexpected region.",
+      "affected": "Customers and clients",
+      "l": 3,
+      "i": 5,
+      "tl": 2,
+      "ti": 5,
+      "why": "Supplier terms and subprocessors are unknown; contractual and technical checks reduce exposure.",
+      "treatment": "Mitigate",
+      "response": "Review processing roles, training opt-out, locations, deletion and exit terms",
+      "owner": "Privacy Lead",
+      "controls": [
+        "C05"
+      ],
+      "day": 45,
+      "proof": "Signed terms, settings export and documented transfer assessment where applicable",
+      "inherent": 15,
+      "target": 10,
+      "band": "High",
+      "targetBand": "Moderate",
+      "status": "Open - treatment designed; deployment unverified"
+    },
+    {
+      "id": "R07",
+      "name": "Unlicensed or misleading synthetic creative",
+      "system": "AI-01",
+      "event": "Generated assets copy protected work or depict a person without permission.",
+      "affected": "Rights holders, depicted people and consumers",
+      "l": 3,
+      "i": 4,
+      "tl": 2,
+      "ti": 4,
+      "why": "Creative provenance is currently absent; documented review reduces avoidable release errors.",
+      "treatment": "Mitigate",
+      "response": "Rights/provenance checklist, likeness consent and contextual disclosure",
+      "owner": "Marketing Lead",
+      "controls": [
+        "C07",
+        "C10"
+      ],
+      "day": 60,
+      "proof": "Asset rights log and documented synthetic-media release review",
+      "inherent": 12,
+      "target": 8,
+      "band": "Moderate",
+      "targetBand": "Moderate",
+      "status": "Open - treatment designed; deployment unverified"
+    },
+    {
+      "id": "R08",
+      "name": "Deepfake instruction causes payment fraud",
+      "system": "AI-04 / remote communications",
+      "event": "A synthetic executive voice persuades a remote employee to change a payee.",
+      "affected": "Agency and suppliers",
+      "l": 3,
+      "i": 5,
+      "tl": 1,
+      "ti": 5,
+      "why": "Remote requests can impersonate leaders; known-channel callback and dual approval reduce likelihood.",
+      "treatment": "Avoid / mitigate",
+      "response": "AI cannot pay; independently verify payee changes and require dual authorization",
+      "owner": "Finance Lead",
+      "controls": [
+        "C06",
+        "C10",
+        "C12"
+      ],
+      "day": 90,
+      "proof": "Finance control walkthrough and callback tabletop",
+      "inherent": 15,
+      "target": 5,
+      "band": "High",
+      "targetBand": "Moderate",
+      "status": "Open - treatment designed; deployment unverified"
+    },
+    {
+      "id": "R09",
+      "name": "Shadow AI bypasses governance",
+      "system": "All systems",
+      "event": "Staff use personal tools outside the inventory to process client work.",
+      "affected": "Clients, workers and customers",
+      "l": 4,
+      "i": 4,
+      "tl": 2,
+      "ti": 4,
+      "why": "Tool sprawl is assumed common; training and sanctioned access reduce but do not eliminate bypass.",
+      "treatment": "Mitigate",
+      "response": "Approved tools, easy request route, training and proportionate access monitoring",
+      "owner": "GRC Lead",
+      "controls": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "day": 30,
+      "proof": "Inventory reconciliation and access/training coverage report",
+      "inherent": 16,
+      "target": 8,
+      "band": "High",
+      "targetBand": "Moderate",
+      "status": "Open - treatment designed; deployment unverified"
+    },
+    {
+      "id": "R10",
+      "name": "AI outage or runaway workflow disrupts delivery",
+      "system": "AI-03 / AI-04",
+      "event": "A provider failure or repeated tool loop delays support and consumes unexpected budget.",
+      "affected": "Clients and support users",
+      "l": 3,
+      "i": 4,
+      "tl": 2,
+      "ti": 4,
+      "why": "External service dependency is material; quotas and manual fallback limit frequency of disruption.",
+      "treatment": "Mitigate",
+      "response": "Usage caps, circuit breaker, human fallback and tested disable/retire process",
+      "owner": "Operations Lead",
+      "controls": [
+        "C08",
+        "C11",
+        "C12"
+      ],
+      "day": 90,
+      "proof": "Quota/circuit-breaker logs, outage exercise and recovery verification",
+      "inherent": 12,
+      "target": 8,
+      "band": "Moderate",
+      "targetBand": "Moderate",
+      "status": "Open - treatment designed; deployment unverified"
+    }
+  ],
+  "functions": [
+    {
+      "name": "GOVERN",
+      "line": "Set ownership and boundaries.",
+      "text": "AI charter, tool approval, training, supplier criteria and escalation authority.",
+      "evidence": "docs/governance.md",
+      "controls": [
+        "C01",
+        "C03",
+        "C05",
+        "C06",
+        "C07"
+      ]
+    },
+    {
+      "name": "MAP",
+      "line": "Understand each use case.",
+      "text": "Four-system inventory, intended limits, input routes, affected groups and harm scenarios.",
+      "evidence": "data/ai-inventory.csv",
+      "controls": [
+        "C02",
+        "C10"
+      ]
+    },
+    {
+      "name": "MEASURE",
+      "line": "Test what matters.",
+      "text": "Risk scoring, repeatable policy checks, release criteria and a monitoring specification.",
+      "evidence": "evidence/control-checks.json",
+      "controls": [
+        "C04",
+        "C09",
+        "C11"
+      ]
+    },
+    {
+      "name": "MANAGE",
+      "line": "Treat, pause and improve.",
+      "text": "Prioritized owners and deadlines, risk acceptance rules, AI incident response and retirement.",
+      "evidence": "docs/implementation.md",
+      "controls": [
+        "C08",
+        "C12"
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "AI inventory coverage",
+      "definition": "Inventoried AI systems / discovered AI systems",
+      "target": "100% before use",
+      "frequency": "Monthly and at onboarding",
+      "owner": "Operations Lead"
+    },
+    {
+      "metric": "Independent release approval",
+      "definition": "Public releases with valid revision-bound sign-off / public releases",
+      "target": "100%",
+      "frequency": "Each release",
+      "owner": "Marketing Lead"
+    },
+    {
+      "metric": "Restricted-data exposure",
+      "definition": "Confirmed restricted-data transmissions to an unapproved destination",
+      "target": "0; any event pauses the affected flow",
+      "frequency": "Continuous alerts; weekly review",
+      "owner": "Privacy Lead"
+    },
+    {
+      "metric": "Grounded-answer review",
+      "definition": "Source-supported answers / 50 sampled FAQ answers; 0 critical false claims",
+      "target": "At least 95%; failure blocks release",
+      "frequency": "Before release, weekly and on changes",
+      "owner": "Client Services Lead"
+    },
+    {
+      "metric": "Targeting review",
+      "definition": "In-scope campaigns with consent/proxy/subgroup review / in-scope campaigns",
+      "target": "100%; unexplained harmful disparity blocks use",
+      "frequency": "Each campaign and material change",
+      "owner": "Marketing Lead"
+    },
+    {
+      "metric": "Pause time",
+      "definition": "Minutes from validated alert to disabled affected AI integration",
+      "target": "At most 15 minutes in a drill",
+      "frequency": "Quarterly drill",
+      "owner": "IT Lead"
+    }
+  ],
+  "sources": [
+    {
+      "label": "NIST AI RMF overview / version status",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "label": "NIST AI 100-1: AI RMF 1.0 (2023)",
+      "url": "https://doi.org/10.6028/NIST.AI.100-1"
+    },
+    {
+      "label": "NIST AI 600-1: Generative AI Profile (2024)",
+      "url": "https://doi.org/10.6028/NIST.AI.600-1"
+    }
+  ],
+  "controls": [
+    {
+      "id": "C01",
+      "gap": "G01",
+      "title": "AI charter, accountable owners and release authority",
+      "owner": "GRC Lead",
+      "nist": [
+        "GOVERN 2.1",
+        "GOVERN 2.3"
+      ],
+      "day": 15,
+      "status": "Documented; deployment unverified"
+    },
+    {
+      "id": "C02",
+      "gap": "G02",
+      "title": "Four use-case records with lifecycle and review triggers",
+      "owner": "Operations Lead",
+      "nist": [
+        "GOVERN 1.6",
+        "MAP 1.1"
+      ],
+      "day": 15,
+      "status": "Documented; deployment unverified"
+    },
+    {
+      "id": "C03",
+      "gap": "G03",
+      "title": "Approved-tool register, acceptable use and training",
+      "owner": "GRC Lead",
+      "nist": [
+        "GOVERN 1.4",
+        "GOVERN 2.2"
+      ],
+      "day": 30,
+      "status": "Documented; deployment unverified"
+    },
+    {
+      "id": "C04",
+      "gap": "G04",
+      "title": "Minimize inputs, block restricted data and verify retention",
+      "owner": "Privacy Lead",
+      "nist": [
+        "MEASURE 2.10"
+      ],
+      "day": 30,
+      "status": "Documented + selected logic simulated"
+    },
+    {
+      "id": "C05",
+      "gap": "G05",
+      "title": "Vendor review covering reuse, hosting, deletion and subprocessors",
+      "owner": "Privacy Lead",
+      "nist": [
+        "GOVERN 6.1",
+        "MANAGE 3.1"
+      ],
+      "day": 45,
+      "status": "Documented; deployment unverified"
+    },
+    {
+      "id": "C06",
+      "gap": "G06",
+      "title": "SSO/MFA, managed endpoints and scoped time-limited access",
+      "owner": "IT Lead",
+      "nist": [
+        "MEASURE 2.7"
+      ],
+      "day": 30,
+      "status": "Documented; deployment unverified"
+    },
+    {
+      "id": "C07",
+      "gap": "G07",
+      "title": "Independent approval bound to the exact output revision",
+      "owner": "Marketing Lead",
+      "nist": [
+        "GOVERN 3.2",
+        "MAP 3.5"
+      ],
+      "day": 30,
+      "status": "Documented + selected logic simulated"
+    },
+    {
+      "id": "C08",
+      "gap": "G08",
+      "title": "Read-only connectors; deny payments and spend changes",
+      "owner": "Engineering Lead",
+      "nist": [
+        "MEASURE 2.7",
+        "MANAGE 2.4"
+      ],
+      "day": 45,
+      "status": "Documented + selected logic simulated"
+    },
+    {
+      "id": "C09",
+      "gap": "G09",
+      "title": "Ban sensitive targeting; contextual fairness and consent review",
+      "owner": "Marketing Lead",
+      "nist": [
+        "MEASURE 2.11"
+      ],
+      "day": 60,
+      "status": "Documented; deployment unverified"
+    },
+    {
+      "id": "C10",
+      "gap": "G10",
+      "title": "Rights checks, required disclosure and verified payment callbacks",
+      "owner": "Marketing Lead",
+      "nist": [
+        "MAP 4.1",
+        "GOVERN 6.1"
+      ],
+      "day": 60,
+      "status": "Documented; deployment unverified"
+    },
+    {
+      "id": "C11",
+      "gap": "G11",
+      "title": "Release tests, weekly sampling and change-triggered re-evaluation",
+      "owner": "Engineering Lead",
+      "nist": [
+        "MEASURE 2.1",
+        "MEASURE 2.4"
+      ],
+      "day": 60,
+      "status": "Documented; deployment unverified"
+    },
+    {
+      "id": "C12",
+      "gap": "G12",
+      "title": "AI playbook, kill switch, appeals and decommission checklist",
+      "owner": "IT Lead",
+      "nist": [
+        "MANAGE 2.4",
+        "MANAGE 4.1"
+      ],
+      "day": 90,
+      "status": "Documented + selected logic simulated"
+    }
+  ]
+}

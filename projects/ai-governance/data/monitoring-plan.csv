@@ -1,0 +1,7 @@
+metric,definition,target,frequency,owner
+"AI inventory coverage","Inventoried AI systems / discovered AI systems","100% before use","Monthly and at onboarding","Operations Lead"
+"Independent release approval","Public releases with valid revision-bound sign-off / public releases","100%","Each release","Marketing Lead"
+"Restricted-data exposure","Confirmed restricted-data transmissions to an unapproved destination","0; any event pauses the affected flow","Continuous alerts; weekly review","Privacy Lead"
+"Grounded-answer review","Source-supported answers / 50 sampled FAQ answers; 0 critical false claims","At least 95%; failure blocks release","Before release, weekly and on changes","Client Services Lead"
+"Targeting review","In-scope campaigns with consent/proxy/subgroup review / in-scope campaigns","100%; unexplained harmful disparity blocks use","Each campaign and material change","Marketing Lead"
+"Pause time","Minutes from validated alert to disabled affected AI integration","At most 15 minutes in a drill","Quarterly drill","IT Lead"

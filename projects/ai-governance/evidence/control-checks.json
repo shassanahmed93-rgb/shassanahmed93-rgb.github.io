@@ -1,0 +1,401 @@
+{
+  "type": "Synthetic metadata policy checks",
+  "runAt": "2026-11-17T16:26:15.654Z",
+  "scope": "Selected logic for C04/C07/C08/C12 only; no model, identity provider or production system tested.",
+  "limitations": [
+    "Caller-supplied metadata and roles are trusted, not authenticated.",
+    "No PII, injection, deepfake, factuality or bias detection.",
+    "Local logs are editable; no immutable audit claim.",
+    "Passing cases do not validate residual risk targets or close operational gaps."
+  ],
+  "total": 24,
+  "passed": 24,
+  "failed": 0,
+  "results": [
+    {
+      "id": "T01",
+      "name": "Public draft permitted",
+      "controls": [
+        "C04",
+        "C08"
+      ],
+      "expected": {
+        "decision": "ALLOW",
+        "reason": "APPROVED_DRAFT_ONLY"
+      },
+      "actual": {
+        "decision": "ALLOW",
+        "reason": "APPROVED_DRAFT_ONLY"
+      },
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "name": "Internal draft in approved tool",
+      "controls": [
+        "C04"
+      ],
+      "expected": {
+        "decision": "ALLOW",
+        "reason": "APPROVED_DRAFT_ONLY"
+      },
+      "actual": {
+        "decision": "ALLOW",
+        "reason": "APPROVED_DRAFT_ONLY"
+      },
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "name": "Restricted input denied",
+      "controls": [
+        "C04"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "RESTRICTED_DATA"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "RESTRICTED_DATA"
+      },
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "name": "Personal tool denied",
+      "controls": [
+        "C04"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "UNAPPROVED_TOOL"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "UNAPPROVED_TOOL"
+      },
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "name": "Public release needs review",
+      "controls": [
+        "C07"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "HUMAN_APPROVAL_REQUIRED"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "HUMAN_APPROVAL_REQUIRED"
+      },
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "name": "Reviewed exact revision permitted",
+      "controls": [
+        "C07"
+      ],
+      "expected": {
+        "decision": "ALLOW",
+        "reason": "REVIEWED_ACTION"
+      },
+      "actual": {
+        "decision": "ALLOW",
+        "reason": "REVIEWED_ACTION"
+      },
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "name": "Changed output invalidates approval",
+      "controls": [
+        "C07"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "STALE_APPROVAL"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "STALE_APPROVAL"
+      },
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "name": "Self approval denied",
+      "controls": [
+        "C07"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "INDEPENDENT_REVIEW_REQUIRED"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "INDEPENDENT_REVIEW_REQUIRED"
+      },
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "name": "Wrong reviewer role denied",
+      "controls": [
+        "C07"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "UNAUTHORIZED_REVIEWER"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "UNAUTHORIZED_REVIEWER"
+      },
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "name": "Payment denied despite sign-off",
+      "controls": [
+        "C08"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "PROHIBITED_ACTION"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "PROHIBITED_ACTION"
+      },
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "name": "Ad spend change denied",
+      "controls": [
+        "C08"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "PROHIBITED_ACTION"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "PROHIBITED_ACTION"
+      },
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "name": "Autonomous outreach denied",
+      "controls": [
+        "C08"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "PROHIBITED_ACTION"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "PROHIBITED_ACTION"
+      },
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "name": "Sensitive targeting denied",
+      "controls": [
+        "C08"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "PROHIBITED_ACTION"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "PROHIBITED_ACTION"
+      },
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "name": "Pause overrides valid approval",
+      "controls": [
+        "C12"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "EMERGENCY_PAUSE"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "EMERGENCY_PAUSE"
+      },
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "name": "Unknown system denied",
+      "controls": [
+        "C08"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "INVALID_METADATA"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "INVALID_METADATA"
+      },
+      "passed": true
+    },
+    {
+      "id": "T16",
+      "name": "Unknown action denied",
+      "controls": [
+        "C08"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "INVALID_METADATA"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "INVALID_METADATA"
+      },
+      "passed": true
+    },
+    {
+      "id": "T17",
+      "name": "Missing classification denied",
+      "controls": [
+        "C04"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "INVALID_METADATA"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "INVALID_METADATA"
+      },
+      "passed": true
+    },
+    {
+      "id": "T18",
+      "name": "CRM write requires review",
+      "controls": [
+        "C07"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "HUMAN_APPROVAL_REQUIRED"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "HUMAN_APPROVAL_REQUIRED"
+      },
+      "passed": true
+    },
+    {
+      "id": "T19",
+      "name": "Reviewed CRM write permitted",
+      "controls": [
+        "C07"
+      ],
+      "expected": {
+        "decision": "ALLOW",
+        "reason": "REVIEWED_ACTION"
+      },
+      "actual": {
+        "decision": "ALLOW",
+        "reason": "REVIEWED_ACTION"
+      },
+      "passed": true
+    },
+    {
+      "id": "T20",
+      "name": "FAQ assistant cannot publish",
+      "controls": [
+        "C08"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "OUT_OF_SCOPE_ACTION"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "OUT_OF_SCOPE_ACTION"
+      },
+      "passed": true
+    },
+    {
+      "id": "T21",
+      "name": "False approval denied",
+      "controls": [
+        "C07"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "HUMAN_APPROVAL_REQUIRED"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "HUMAN_APPROVAL_REQUIRED"
+      },
+      "passed": true
+    },
+    {
+      "id": "T22",
+      "name": "No request denied",
+      "controls": [
+        "C08"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "INVALID_METADATA"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "INVALID_METADATA"
+      },
+      "passed": true
+    },
+    {
+      "id": "T23",
+      "name": "Blank reviewer denied",
+      "controls": [
+        "C07"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "INDEPENDENT_REVIEW_REQUIRED"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "INDEPENDENT_REVIEW_REQUIRED"
+      },
+      "passed": true
+    },
+    {
+      "id": "T24",
+      "name": "Missing pause flag fails closed",
+      "controls": [
+        "C12"
+      ],
+      "expected": {
+        "decision": "DENY",
+        "reason": "INVALID_METADATA"
+      },
+      "actual": {
+        "decision": "DENY",
+        "reason": "INVALID_METADATA"
+      },
+      "passed": true
+    }
+  ]
+}

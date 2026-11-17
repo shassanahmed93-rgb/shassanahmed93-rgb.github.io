@@ -116,6 +116,35 @@ const SITE = {
     }
   ],
   "projects": [
+{
+  "slug": "ai-governance",
+  "name": "Responsible AI Governance | NexaReach Studio",
+  "subtitle": "NIST AI RMF case study for a fictional remote marketing agency",
+  "category": "governance",
+  "tags": [
+    "AI Governance",
+    "NIST AI RMF",
+    "Risk Assessment",
+    "Remote Work"
+  ],
+  "summary": "Connect 12 governance gaps and 10 evaluated risks to practical controls, clear owners and evidence requirements.",
+  "points": [
+    "Inventoried four AI use cases across campaigns, lead processing, FAQ drafts and workflow tasks; assessed risks to clients, customers and remote teams.",
+    "Created 12 control designs, acceptable-use rules, supplier criteria, approval requirements and a staged 90-day rollout aligned to NIST AI RMF 1.0 and its Generative AI Profile.",
+    "Passed 24 synthetic metadata policy checks. The case is fictional; production controls and target residual ratings remain unvalidated."
+  ],
+  "link": "https://github.com/shassanahmed93-rgb/implement-ai-rmf-2.0",
+  "presentation": {
+    "id": "ai-governance",
+    "kind": "AI governance case study · Fictional remote agency",
+    "summary": "From an assumed gap to a documented control, a testable decision and a clear release boundary.",
+    "image": "projects/ai-governance/assets/overview.svg",
+    "demo": "projects/ai-governance/",
+    "study": "projects/ai-governance/NexaReach_AI_Governance_Brief.pdf",
+    "metric": "12 gaps · 10 risks · 24 synthetic checks",
+    "route": "Scope → Gaps → Risks → Controls → Evidence"
+  }
+},
     {
       "slug": "deepfake-fraud-prevention",
       "name": "Deepfake-fraud-prevention",

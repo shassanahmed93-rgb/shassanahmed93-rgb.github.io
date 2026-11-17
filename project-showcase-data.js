@@ -1,5 +1,26 @@
 window.PORTFOLIO_SLIDES = [
 {
+  "title": "Responsible AI Governance | NexaReach Studio",
+  "label": "NIST AI RMF · Fictional remote marketing agency",
+  "summary": "Connect 12 governance gaps and 10 evaluated risks to practical controls, clear owners and evidence requirements.",
+  "proof": "4 AI use cases · 12 governance gaps · 10 evaluated risks · 24 synthetic policy checks passed; production validation pending.",
+  "url": "/projects/ai-governance/",
+  "source": "https://github.com/shassanahmed93-rgb/implement-ai-rmf-2.0",
+  "image": "/projects/ai-governance/assets/overview.svg",
+  "frames": [
+    "Map the remote team, AI use cases and affected people",
+    "Trace gaps and risks to controls, owners and deadlines",
+    "Inspect policy checks and the evidence still needed before release"
+  ],
+  "media": [
+    {
+      "url": "/projects/ai-governance/assets/overview.svg",
+      "label": "AI governance scope, risk assessment and implementation"
+    }
+  ],
+  "presentationId": 25
+},
+{
   "title": "Deepfake-fraud-prevention — Social Engineering Fraud Prevention",
   "label": "Security product prototype · Human-centered fraud triage",
   "summary": "Turn high-pressure messages into explainable risk signals, safe verification steps, and a human-review case.",
