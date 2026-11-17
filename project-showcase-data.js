@@ -1,6 +1,6 @@
 window.PORTFOLIO_SLIDES = [
 {
-  "title": "SENTINEL AI — Deepfake & Social Engineering Fraud Prevention",
+  "title": "Deepfake-fraud-prevention — Social Engineering Fraud Prevention",
   "label": "Security product prototype · Human-centered fraud triage",
   "summary": "Turn high-pressure messages into explainable risk signals, safe verification steps, and a human-review case.",
   "proof": "Rule-based text triage · case workflow · API hardening · evaluation harness",
@@ -15,7 +15,7 @@ window.PORTFOLIO_SLIDES = [
   "media": [
     {
       "url": "/projects/sentinel-ai/cover.svg",
-      "label": "SENTINEL AI product concept"
+      "label": "Deepfake-fraud-prevention project concept"
     }
   ],
   "presentationId": 24
